@@ -17,7 +17,7 @@ body{
 }
 
 #bottombar{
-    position: sticky;
+    position: fixed;
     bottom: 0;
     height: 10vh;
     background-color: white;

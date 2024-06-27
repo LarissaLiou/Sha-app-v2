@@ -123,11 +123,5 @@
             </div>
         </section>
 
-        <section id = "bottombar" class = "grid4">
-            <img class = "icons" src = "static/assets/homeicon.png">
-            <img class = "icons" src = "static/assets/peopleicon.png">
-            <img class = "icons" src = "static/assets/searchicon.png">
-            <img class = "icons round" src = "static/assets/pfp.jpeg"> <!-- for backend: replace with database-->
-        </section>
     </body>
 </html>
