@@ -3,17 +3,21 @@ session_start();
 
 $filename = isset($_GET['filename']) ? $_GET['filename'] : "";
 
-// $loggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true;
-$loggedIn = True;
+$loggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true;
+
 
 if ($loggedIn){
     switch($filename){
-        case 'login':
-            include('templates/login Pages/login.tpl.php');
-            break;
+        // case 'login':
+        //     include('templates/login Pages/login.tpl.php');
+        //     break;
 
-        case 'signup':
-            include('templates/login Pages/signup.tpl.php');
+        // case 'signup':
+        //     include('templates/login Pages/signup.tpl.php');
+        //     break;
+
+        case 'home':
+            include('templates/home.tpl.php');
             break;
 
         case 'interest':
@@ -39,5 +43,17 @@ if ($loggedIn){
     include 'templates/footer/footer.tpl.php';
 } else{
     session_reset();
-    include('templates/login Pages/login.tpl.php');
+    switch($filename){
+        case 'login':
+            include('templates/login Pages/login.tpl.php');
+            break;
+
+        case 'signup':
+            include('templates/login Pages/signup.tpl.php');
+            break;
+
+        default:
+            include('templates/login Pages/login.tpl.php');
+    }
+    
 }

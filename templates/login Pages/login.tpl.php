@@ -16,7 +16,7 @@
             <h2>Lorem ipsum dolor sit amet, consectetur</h2>
         </section>
         <main>
-            <form class = "login_form" action="your-login-endpoint" method="post">
+            <form class = "login_form" action="backend/login-end-point.php" method="post">
                 <input class = "login-button" type="email" id="email" name="email" placeholder="Email" aria-label="Email" required>
                 <input class = "login-button" type="password" id="password" name="password" placeholder="Password" aria-label="Password" required>
                 <button class = "login-button login-button--submit" type="submit">Login</button>
@@ -36,7 +36,12 @@
         
     </div>
     <footer>
-        <p class = "text--small">Don't have an account? <a class = "signup" href="signup.html">Sign Up</a></p>
+        <p class = "text--small">Don't have an account? <a class = "signup" href="index.php?filename=signup">Sign Up</a></p>
     </footer>
+    <?php
+        if ($_SESSION['login_attempt'] == false){
+            echo '<script>alert("Username or Password is incorrect")</script>';
+        }
+    ?>
 </body>
 </html>

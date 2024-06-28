@@ -26,16 +26,16 @@
             <div>
                 <p class = "text--small">Sign up with</p>
                 <div class = "social-login-buttons">
-                    <button class="google"><img src="static/google.png" alt="Google"></button>
-                    <button class="facebook"><img src="static/facebook.png" alt="Facebook"></button>
-                    <button class="apple"><img src="static/apple.png" alt="Apple"></button>
+                    <button class="google"><img src="static/assets/google.png" alt="Google"></button>
+                    <button class="facebook"><img src="static/assets/facebook.png" alt="Facebook"></button>
+                    <button class="apple"><img src="static/assets/apple.png" alt="Apple"></button>
                 </div>
             </div>
         </main>
         
     </div>
     <footer>
-        <p class = "text--small">Have an account already? <a class = "signup" href="login.html">Login</a></p>
+        <p class = "text--small">Have an account already? <a class = "signup" href="index.php?filename=login">Login</a></p>
     </footer>
 </body>
 </html>

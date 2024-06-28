@@ -9,7 +9,7 @@
 
     <body>
         <section id = "followers">
-            <div class = "size1">🡰 &nbsp;<span class = "bold">Profile</span></div>
+            <div class = "size1">🡰 &nbsp;<span class = "bold">Profile</span><a href = 'backend/logout-end-point.php'><button id = 'logout' href = >Log out</button></a></div>
             <br>
 
             <div class = "grid1">

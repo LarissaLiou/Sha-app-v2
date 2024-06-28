@@ -18,6 +18,10 @@ section{
     margin: 5vh 0;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 body{
     display:flex;
     flex-direction: column;
