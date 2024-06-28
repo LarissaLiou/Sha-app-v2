@@ -1,0 +1,39 @@
+#bottombar{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 10vh;
+    background-color: white;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #DADADA;
+}
+
+#endingSpace{
+    height: 10vh;
+    display: relative;
+}
+
+/* grid4 follows a one [1] [1] [1] [1] grid format */
+.grid4{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 25% 25% 25% 25%;
+    place-items: center;
+}
+
+.icons{
+    height: 6vh !important;
+    width: auto !important;
+}
+
+.icons:hover{
+    cursor: pointer;
+}
+
+.round{
+    border-radius: 100%;
+    width: 15vw;
+    height: auto;
+}

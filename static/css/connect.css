@@ -1,0 +1,158 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.6rem;
+    margin: 0;
+    background-color: #fafafa; /* put here so that the white will not camouflage with the background */
+}
+
+h1{
+    margin: 3vh 0.8rem;
+}
+
+h1,h2,h3{
+    font-weight:600;
+}
+.before{
+    --currentness:0.5;
+    --offset:-88vw;
+}
+
+.fadeFromLeft{
+    animation: fadeFromLeft 0.5s backwards;
+}
+
+.fadeFromRight{
+    animation: fadeFromRight 0.5s backwards;
+}
+.after{
+    --currentness:0.5;
+    --offset:98vw;
+    animation: fadeFromRight 0.5s backwards;
+}
+.current{
+    --currentness:1;
+    --offset:5vw;
+}
+.container{
+    --shift:0px;
+    opacity:var(--currentness);
+    filter: blur(calc((1 - var(--currentness)) * 0.5 * 10px));
+    margin-top:calc((1 - var(--currentness)) * 5vh); 
+    transform: translateX(calc(var(--shift) + var(--offset)));
+    position:fixed;
+    top:9%;
+    bottom: 10vh;
+    display:grid;
+    row-gap: 0.75em;
+    background: #3A1318;
+    color:white;
+    width:90vw;
+    height:80vh;
+    padding:1em;
+    box-sizing: border-box;
+    border-radius:1em;
+    box-shadow: 0px 3px 10px 2px #231F20;
+    padding-bottom:2em;
+}
+.age{
+    color:#5BC0BE;
+}
+.location{
+    color:grey;
+}
+.profile-img-wrapper{
+    width:100%;
+    margin:0;
+}
+
+.profile-img{
+    border-radius: 2em;
+    width:100%;
+}
+
+section{
+    display:flex;
+    flex-direction: column;
+    gap:0.25em;
+}
+
+.interest-container{
+    display:flex;
+    flex-wrap: wrap;
+    gap:0.5em;
+}
+
+.interest-blue{
+    background-color:#5BC0BE
+}
+
+.interest-pink{
+    background-color: pink;
+}
+
+.interest-blue{
+    background-color:rgb(141, 118, 253)
+}
+
+.interest-red{
+    background-color: rgb(255, 101, 101)
+}
+
+.interest{
+    color:white;
+    padding:0.25em 0.5em;
+    border-radius: 1em;
+}
+
+.button{
+    border-radius: 1em;
+    font-size:1em;
+    padding:0.25em 1em;
+    border:none;
+    font-weight:bold;
+    height: 5vh;
+}
+
+.block{
+    display: relative !important;
+}
+
+.action_buttons{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap:0.5em
+}
+
+.view{
+    background:white;
+    color:black;
+}
+
+.connect{
+    background:#5BC0BE;
+    color:white;
+}
+
+.see_more{
+    color:#5BC0BE
+}
+
+.gallery{
+    display:flex;
+    width:fit-content;
+    gap:1em;
+}
+
+@keyframes fadeFromLeft {
+    0%{
+        opacity:0;
+        transform: translateX(-100vw);
+    }
+}
+
+@keyframes fadeFromRight {
+    0%{
+        opacity:0;
+        transform: translateX(110vw);
+    }
+}

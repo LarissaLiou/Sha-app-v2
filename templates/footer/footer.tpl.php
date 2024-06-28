@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>    
     <head>
-        <link rel = "stylesheet" href = "static/css/profile.css">
+       <link rel = "stylesheet" href = "static/css/footer.css">
     </head>
 
     <body>
+        <div id = "endingSpace"></div>
         <section id = "bottombar" class = "grid4">
             <a href = "index.php?filename=home">
                 <img class = "icons" src = "static/assets/homeicon.png">
             </a>
 
-            <a>
+            <a href = "index.php?filename=connect">
                 <img class = "icons" src = "static/assets/peopleicon.png">
             </a>
 

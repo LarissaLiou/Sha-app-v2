@@ -1,6 +1,6 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     margin: 0;
     background-color: #fafafa; /* put here so that the white will not camouflage with the background */
 }
@@ -19,6 +19,7 @@ body{
 #bottombar{
     position: fixed;
     bottom: 0;
+    left: 0;
     height: 10vh;
     background-color: white;
     width: 100vw;
@@ -137,6 +138,11 @@ button:hover{
     align-items: center;
 }
 
+h1,h2,h3{
+    font-weight:600;
+    font-size: 2em;
+}
+
 .highlightsImage{
     width: 95%;
     height: auto;
@@ -207,7 +213,7 @@ button:hover{
 }
 
 section{
-    margin: 3vh 1rem;
+    margin: 3vh 0.8rem;
 }
 
 .size1{
