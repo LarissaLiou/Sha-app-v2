@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="login.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/login.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src = "login.js" defer>  </script>
 </head>
@@ -27,9 +27,9 @@
             <div>
                 <p class = "text--small">Continue with</p>
                 <div class = "social-login-buttons">
-                    <button class="google"><img src="static/google.png" alt="Google"></button>
-                    <button class="facebook"><img src="static/facebook.png" alt="Facebook"></button>
-                    <button class="apple"><img src="static/apple.png" alt="Apple"></button>
+                    <button class="google"><img src="static/assets/google.png" alt="Google"></button>
+                    <button class="facebook"><img src="static/assets/facebook.png" alt="Facebook"></button>
+                    <button class="apple"><img src="static/assets/apple.png" alt="Apple"></button>
                 </div>
             </div>
         </main>
