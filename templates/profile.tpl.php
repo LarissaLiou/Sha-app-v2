@@ -13,7 +13,7 @@
             <br>
 
             <div class = "grid1">
-                <img id = "pfp" src = "static/assets/pfp.jpeg"> <!-- for backend: to be replaced by an image retrieved from database-->
+                <img id = "pfp" src = "static/assets/pfpicon.jpg"> <!-- for backend: to be replaced by an image retrieved from database-->
 
                 <div class = "grid2">
                     <div class = "gridfollowers">
