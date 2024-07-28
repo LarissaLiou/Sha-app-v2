@@ -5,8 +5,21 @@ body{
     background-color: #fafafa; /* put here so that the white will not camouflage with the background */
 }
 
+.messageOnTab{
+    border-radius: 1rem;
+    border: 1px solid #5BC0BE;
+}
+
 button:hover{
     cursor: pointer;
+}
+
+.eachPerson{
+    border: 2px solid #5BC0BE;
+    border-radius: 100%;
+    height: 8vh !important;
+    width: auto !important;
+    margin: 0 0.2rem;
 }
 
 #goBack{
@@ -20,6 +33,12 @@ h1{
 
 h2{
     font-weight: 400;
+}
+
+#headerIcon{
+    float: right;
+    height: 1.5rem;
+    margin: 0.8rem 0.5rem;
 }
 
 .mediumSize{
@@ -77,6 +96,17 @@ h2{
 .notifTime{
     grid-area: c;
     color: grey;
+}
+
+#peopleActive{
+    display: flex;
+    justify-content: left;
+    overflow-x: scroll;
+}
+
+.pfp2{
+    transform: translate3d(3vw, 3vw);
+    position: absolute;
 }
 
 section{
