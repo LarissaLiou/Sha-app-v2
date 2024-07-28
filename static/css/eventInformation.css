@@ -1,0 +1,81 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.6rem;
+    margin: 0;
+    padding: 5vw;
+    background-color: #fafafa; /* put here so that the white will not camouflage with the background */
+}
+
+button{
+    width: 95%;
+    border: 1px solid black;
+    border-radius: 1rem;
+    margin: 0.2rem 3vw;
+    height: 1.5rem;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+#green{
+    background-color: #5BC0BE;
+}
+
+#header{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.icon{
+    /* background-color: lightblue; */
+    border: 1px solid black;
+    border-radius: 0.3rem;
+    margin: 0.1rem;
+    padding: 0 0.3rem;
+}
+
+#eventImage{
+    width: 90vw;
+    height: 30vh;
+    border-radius: 1rem;
+    margin: auto;
+    object-fit: cover;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+}
+
+.headerIcons{
+    float: right;
+}
+
+h2{
+    display: inline-block;
+}
+/* 
+.interest{
+    color:white;
+    padding:0.25em 0.5em;
+    border-radius: 1em;
+} */
+
+.interest-container{
+    display:flex;
+    flex-wrap: wrap;
+    gap:0.5em;
+}
+
+.marginpls{
+    margin: 1rem 0;
+}
+
+.mediumSize{
+    font-size: 1.5rem;
+}
+
+.smallIcons{
+    height: 1em;
+}
