@@ -83,6 +83,10 @@ button:hover{
     margin-left: 1rem;
 }
 
+#goBack{
+    text-decoration: none;
+}
+
 .grey{
     color: grey;
 }
@@ -138,10 +142,15 @@ button:hover{
     align-items: center;
 }
 
-h1,h2,h3{
-    font-weight:600;
+h1{
+    display: inline-block;
     font-size: 2em;
 }
+
+/* h1,h2,h3{
+    font-weight:600;
+    font-size: 2em;
+} */
 
 .highlightsImage{
     width: 95%;
@@ -179,6 +188,10 @@ h1,h2,h3{
     background-color: #f05451;
     border: 2px solid black;
     border-radius: 0.3rem;
+}
+
+.mediumSize{
+    font-size: 1.5rem;
 }
 
 /* to equalise the height of the follow icon and the message button */

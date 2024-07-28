@@ -1,0 +1,84 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.6rem;
+    margin: 0;
+    background-color: #fafafa; /* put here so that the white will not camouflage with the background */
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+#goBack{
+    text-decoration: none;
+}
+
+h1{
+    display: inline-block;
+    font-size: 2em;
+}
+
+h2{
+    font-weight: 400;
+}
+
+.mediumSize{
+    font-size: 1.5rem;
+}
+
+.name, .event{
+    font-weight: bold;
+}
+
+.notifAccept{
+    grid-area: d;
+    display: block;
+    color: white;
+    background-color: #5BC0BE;
+    border: 0px solid black;
+    border-radius: 1em;
+    padding: 0.3rem 1rem;
+}
+
+.notifGridConnect{
+    display: grid;
+    grid-template-columns: 15% 65% 20%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+    'a b d'
+    'a c d';
+    height: 8vh;
+    width: 85vw;
+    place-items: center left;
+}
+
+.notifGridOthers{
+    display: grid;
+    grid-template-columns: 15% 65% 20%;
+    grid-template-rows: 100%;
+    grid-template-areas: 'a b c';
+    place-items: center left;
+    height: 8vh;
+}
+
+.notifDescription{
+    grid-area: b;
+    font-size: 0.8rem;
+}
+
+.notifpfp{
+    border-radius: 100%;
+    height: auto;
+    height: 6vh !important;
+    width: auto !important;
+    grid-area: a;
+}
+
+.notifTime{
+    grid-area: c;
+    color: grey;
+}
+
+section{
+    margin: 3vh 0.8rem;
+}

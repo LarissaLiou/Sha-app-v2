@@ -9,9 +9,9 @@
     <body>
         <section>
             <div id = "header">
-                <a href = "index.php?filename=home"><span class = "mediumSize">🡰</span></a>
-                <img class = "headerIcons" src = 'static/assets/notificationIcon.png'>
-                <img class = "headerIcons" src = 'static/assets/messageIcon.png'>
+                <a href = "index.php?filename=home" id = "goBack"><span class = "mediumSize">🡰</span></a>
+                <a href = "index.php?filename=notification"><img class = "headerIcons" src = 'static/assets/notificationIcon.png'></a>
+                <a href = "index.php?filename=message"><img class = "headerIcons" src = 'static/assets/messageIcon.png'></a>
             </div>
 
             <div class = "flex">

@@ -48,6 +48,10 @@ button:hover{
     justify-content: center;
 }
 
+#goBack{
+    text-decoration: none;
+}
+
 .headerIcons{
     float: right;
 }
