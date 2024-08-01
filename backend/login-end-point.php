@@ -6,6 +6,7 @@ $email = $_POST['email'];
 $password =  $_POST['password'];
 
 $_SESSION['login_attempt'] = true; //resets login attempt failure
+$_SESSION['error'] = '';
 
 $sql = 'SELECT COUNT(*) FROM users WHERE email = ? AND password = ?';
 $stmt = prepared_query($conn, $sql, [$email, $password], 'ss');
@@ -21,6 +22,7 @@ if ($exist){
 } else{
     $_SESSION['loggedin'] = false;
     $_SESSION['login_attempt'] = false; //used to alert users of incorrect username or password after redirect
+    $_SESSION['error'] = 'Username or Password is incorrect';
     header("Location: ../index.php?filename=login");
 }
 

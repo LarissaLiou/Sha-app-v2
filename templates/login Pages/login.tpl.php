@@ -40,7 +40,8 @@
     </footer>
     <?php
         if ($_SESSION['login_attempt'] == false){
-            echo '<script>alert("Username or Password is incorrect")</script>';
+            echo "<script>alert('" . $_SESSION['error'] . "');</script>";
+            $_SESSION['login_attempt'] = true;
         }
     ?>
 </body>

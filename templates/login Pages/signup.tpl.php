@@ -16,7 +16,7 @@
             <h2>Lorem ipsum dolor sit amet, consectetur</h2>
         </section>
         <main>
-            <form class = "login_form" action="your-login-endpoint" method="post">
+            <form class = "login_form" action="backend/signup-end-point.php" method="post">
                 <input class = "login-button" type="email" id="email" name="email" placeholder="Username" aria-label="Username" required>
                 <input class = "login-button" type="password" id="password" name="password" placeholder="Password" aria-label="Password" required>
                 <input class = "login-button" type="password" id="password" name="password" placeholder="Confirm Password" aria-label="Confirm Password" required>
