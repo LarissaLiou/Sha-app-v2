@@ -18,8 +18,8 @@
         <main>
             <form class = "login_form" action="backend/signup-end-point.php" method="post">
                 <input class = "login-button" type="email" id="email" name="email" placeholder="Username" aria-label="Username" required>
-                <input class = "login-button" type="password" id="password" name="password" placeholder="Password" aria-label="Password" required>
-                <input class = "login-button" type="password" id="password" name="password" placeholder="Confirm Password" aria-label="Confirm Password" required>
+                <input class = "login-button" type="password" id="password" name="password1" placeholder="Password" aria-label="Password" required>
+                <input class = "login-button" type="password" id="password" name="password2" placeholder="Confirm Password" aria-label="Confirm Password" required>
                 <button class = "login-button login-button--submit" type="submit">Sign up</button>
             </form>
             <div class = "or-divider">or</div>
@@ -37,5 +37,12 @@
     <footer>
         <p class = "text--small">Have an account already? <a class = "signup" href="index.php?filename=login">Login</a></p>
     </footer>
+
+    <?php
+        if ($_SESSION['login_attempt'] == false){
+            echo "<script>alert('" . $_SESSION['error'] . "');</script>";
+            $_SESSION['login_attempt'] = true;
+        }
+    ?>
 </body>
 </html>

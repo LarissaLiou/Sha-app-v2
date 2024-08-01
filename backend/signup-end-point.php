@@ -3,7 +3,19 @@ session_start();
 include_once 'connect.inc.php';
 
 $username = $_POST['email'];
-$password = $_POST['password'];
+$password1 = $_POST['password1'];
+$password2 = $_POST['password2'];
+echo $password1, $password2;
+
+//checks if password and confirm password is the same
+if ($password1 === $password2){
+    $password = $password1;
+} else{
+    $_SESSION['login_attempt'] = false;
+    $_SESSION['error'] = 'Password and confirm password not matching';
+    header("Location: ../index.php?filename=signup");
+    exit();
+}
 
 //resetting variables
 $_SESSION['error'] = '';
@@ -21,16 +33,15 @@ if ($exist == true){
     $_SESSION['error'] = 'Email already exists';
     header("Location: ../index.php?filename=login");
 } else{
-    $_SESSION['loggedin'] = true;
     //used to decide ID
-    $ID = '';
-    $sql = 'SELECT COUNT(*) FROM users';
-    $ID = $conn->query($sql);
-
     $sql = 'INSERT INTO users VALUES (?, ?, ?, ?, ?, ?)';
-    $stmt = prepared_query($conn, $sql, [$ID, '', '', $username, $password, date('jS F Y')], 'issssi');
-    echo 'HI';
-    $stmt->execute();
-    $stmt->close();
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $date = date('Y-m-d H:i:s');
+        $stmt = prepared_query($conn, $sql, ['', '', '', $username, $password, $date], 'ssssss');
+        $stmt->execute();
+        $stmt->close();
+    }
+    $_SESSION['loggedin'] = true;
     header("Location: ../index.php?filename=home");
 }
+?>
