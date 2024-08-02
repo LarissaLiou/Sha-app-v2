@@ -7,7 +7,7 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 // Parse the URL to get the path
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = explode('/', $uri);
-$endpoint = $uri[2];
+$endpoint = $_GET['endpoint'];
 // Get the HTTP method
 $method = $_SERVER['REQUEST_METHOD'];
 

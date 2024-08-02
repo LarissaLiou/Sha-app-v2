@@ -95,3 +95,44 @@ function executeSelect($mysqli, $sql, $types, $params, $exitOnError = false)
     // Return the success status and data
     return ['success' => true, 'data' => $data];
 }
+
+function executeDelete($mysqli, $sql, $types, $params, $exitOnError = false)
+{
+    $stmt = $mysqli->prepare($sql);
+    if (!$stmt) {
+        // Return error information
+        if ($exitOnError) {
+            error('Prepare failed: ' . $mysqli->error);
+        }
+        return ['success' => false, 'error' => 'Prepare failed: ' . $mysqli->error];
+    }
+
+    // Bind parameters to the prepared statement
+    if (!empty($params)) {
+        $bind = $stmt->bind_param($types, ...$params);
+        if (!$bind) {
+            // Close statement and return error information
+            $stmt->close();
+            if ($exitOnError) {
+                error('Bind param error: ' . $stmt->error);
+            }
+            return ['success' => false, 'error' => 'Bind param error: ' . $stmt->error];
+        }
+    }
+    // Execute the prepared statement
+    $execute = $stmt->execute();
+    if (!$execute) {
+        // Close statement and return error information
+        $stmt->close();
+        if ($exitOnError) {
+            error('Execute error: ' . $stmt->error);
+        }
+        return ['success' => false, 'error' => 'Execute error: ' . $stmt->error];
+    }
+
+    // Close the prepared statement
+    $stmt->close();
+
+    // Return the success status
+    return ['success' => true];
+}
