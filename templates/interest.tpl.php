@@ -87,7 +87,7 @@
         </section>
 
         <section id = 'submitSection'>
-            <button>That's all!</button>
-            <button>I don't really know yet...</button>
+            <a href = 'index.php?filename=interest2'><button>That's all!</button></a>
+            <a href = 'index.php?filename=interest2'><button>I don't really know yet...</button></a>
         </section>
     </body>

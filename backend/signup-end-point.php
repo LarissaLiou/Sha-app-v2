@@ -42,6 +42,6 @@ if ($exist == true){
         $stmt->close();
     }
     $_SESSION['loggedin'] = true;
-    header("Location: ../index.php?filename=home");
+    header("Location: ../index.php?filename=interest");
 }
 ?>
