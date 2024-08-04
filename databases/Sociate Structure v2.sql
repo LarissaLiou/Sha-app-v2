@@ -89,9 +89,9 @@ CREATE TABLE `event_types` (
 
 CREATE TABLE `users` (
   `user_id` BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `user_handle` TEXT NOT NULL,
-  `username` TEXT NOT NULL,
-  `email` TEXT NOT NULL,
+  `user_handle` TEXT NOT NULL UNIQUE,
+  `username` TEXT NOT NULL UNIQUE,
+  `email` TEXT NOT NULL UNIQUE,
   `password` TEXT NOT NULL COMMENT 'HASHED',
   `created_at` DATETIME NOT NULL
 );
