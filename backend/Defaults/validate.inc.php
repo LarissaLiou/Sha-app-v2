@@ -6,8 +6,11 @@ define("CSRF_TOKEN_SECRET",'wxVy4t0EpypTDfPsEhqXfU92wsjnFce1bLMtbDyKWpbiVXGUp1D'
 define("FLAG_SALT","3Y_J2ACWccfmI8ve?(q_fkLl");
 
 function validateData($POST_GET, $filters, $validOptions, $presenceCheck,$jsonCheck = []){
+    
     $inputData = filter_input_array($POST_GET, $filters);
-
+    if ($inputData === null || $inputData === false) {
+        error("Invalid Input");
+    }
     $errors = [];
     foreach ($inputData as $key => $value) {
         if ($value === null || $value === false) {
@@ -119,7 +122,7 @@ function verify_login($conn){
         isset($_SESSION['userid'])){
         // Extracting user details from db
         $sql = "SELECT `email`,`username` FROM `users` WHERE `user_id` = ?";
-        $result = executeSelect($conn,$sql,[$_SESSION['userid']],"i");
+        $result = executeSelect($conn,$sql,"i",[$_SESSION['userid']]);
         if ($result['data'] == null) {
             return false;
         }

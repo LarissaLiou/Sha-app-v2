@@ -93,7 +93,7 @@ function executeSelect($mysqli, $sql, $types, $params, $exitOnError = false)
     $stmt->close();
 
     // Return the success status and data
-    return ['success' => true, 'data' => $data];
+    return ['success' => true, 'data' => $data, 'num_rows' => count($data)];
 }
 
 function executeDelete($mysqli, $sql, $types, $params, $exitOnError = false)

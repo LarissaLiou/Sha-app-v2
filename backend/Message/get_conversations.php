@@ -38,4 +38,3 @@ WHERE
 $conversations = executeSelect($mysqli, $sql, "ii", [$userId, $userId]);
 onSuccess($mysqli, $conversations);
 
-?>
