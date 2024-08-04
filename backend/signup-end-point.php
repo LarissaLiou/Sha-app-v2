@@ -2,6 +2,7 @@
 session_start();
 include_once 'connect.inc.php';
 
+$email = $_POST['username'];
 $username = $_POST['email'];
 $password1 = $_POST['password1'];
 $password2 = $_POST['password2'];
@@ -20,24 +21,40 @@ if ($password1 === $password2){
 //resetting variables
 $_SESSION['error'] = '';
 
-$exist = false;
+$existEmail = false;
 $sql = 'SELECT COUNT(*) FROM users WHERE email = ?';
-$stmt = prepared_query($conn, $sql, [$username], 's');
+$stmt = prepared_query($conn, $sql, [$email], 's');
 $stmt->execute();
-$stmt->bind_result($exist);
+$stmt->bind_result($existEmail);
 $stmt->fetch();
 $stmt->close();
 
-if ($exist == true){
+$existUsername = false;
+$sql = 'SELECT COUNT(*) FROM users WHERE username = ?';
+$stmt = prepared_query($conn, $sql, [$username], 's');
+$stmt->execute();
+$stmt->bind_result($existUsername);
+$stmt->fetch();
+$stmt->close();
+
+if ($existEmail == true){
     $_SESSION['login_attempt'] = false;
     $_SESSION['error'] = 'Email already exists';
-    header("Location: ../index.php?filename=login");
+    header("Location: ../index.php?filename=signup");
+}
+if ($existUsername == true){
+    $_SESSION['login_attempt'] = false;
+    $_SESSION['error'] = 'Username already exists';
+    header("Location: ../index.php?filename=signup");
 } else{
-    //used to decide ID
     $sql = 'INSERT INTO users VALUES (?, ?, ?, ?, ?, ?)';
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $date = date('Y-m-d H:i:s');
-        $stmt = prepared_query($conn, $sql, ['', '', '', $username, $password, $date], 'ssssss');
+        echo("Query: " . $sql);
+        $stmt = prepared_query($conn, $sql, ['', '', $username, $email, $password, $date], 'ssssss');
+        if ($stmt == false) {
+            echo("oops!");
+        }
         $stmt->execute();
         $stmt->close();
     }

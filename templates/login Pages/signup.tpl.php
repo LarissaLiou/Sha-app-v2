@@ -17,7 +17,8 @@
         </section>
         <main>
             <form class = "login_form" action="backend/signup-end-point.php" method="post">
-                <input class = "login-button" type="email" id="email" name="email" placeholder="Username" aria-label="Username" required>
+                <input class = "login-button" type="email" id="email" name="email" placeholder="Email" aria-label="Email" required>
+                <input class = "login-button" type = "text" id = "username" name = "username" placeholder = "Username" aria-label = "Username" required>
                 <input class = "login-button" type="password" id="password" name="password1" placeholder="Password" aria-label="Password" required>
                 <input class = "login-button" type="password" id="password" name="password2" placeholder="Confirm Password" aria-label="Confirm Password" required>
                 <button class = "login-button login-button--submit" type="submit">Sign up</button>

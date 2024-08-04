@@ -17,7 +17,7 @@
         </section>
         <main>
             <form class = "login_form" action="backend/login-end-point.php" method="post">
-                <input class = "login-button" type="email" id="email" name="email" placeholder="Email" aria-label="Email" required>
+                <input class = "login-button" type="text" id="emailUsername" name="emailUsername" placeholder="Email" aria-label="EmailUsername" required>
                 <input class = "login-button" type="password" id="password" name="password" placeholder="Password" aria-label="Password" required>
                 <button class = "login-button login-button--submit" type="submit">Login</button>
                 
