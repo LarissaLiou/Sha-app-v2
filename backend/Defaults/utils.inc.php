@@ -9,7 +9,7 @@ function onError($conn,$error,$additionalData = []) {
 
 function onSuccess($conn,$success,$additionalData = []){
     $data = array_merge(["success"=>$success],$additionalData);
-    echo json_encode($data, JSON_FORCE_OBJECT);
+    echo json_encode($data);
     mysqli_close($conn);
     exit();
 }

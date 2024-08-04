@@ -16,18 +16,10 @@ $presenceCheck = ["user_id"];
 // $inputData = validateData(INPUT_GET, $filterOptions, [], $presenceCheck);
 $inputData = validateData(INPUT_POST, $filterOptions, [], $presenceCheck);
 
-$sql = "SELECT `user1_id`,`user2_id` FROM `connection_requests` WHERE `user1_id` = ? OR `user2_id` = ?";
-$connection = executeSelect($mysqli, $sql, "ii", [$_SESSION['userid'], $_SESSION['userid']]);
-if ($connection['num_rows'] > 0){
+$sql = "INSERT IGNORE INTO `message_requests` (`sender_id`, `recipient_id`) VALUES (?, ?)";
+$result = executeInsert($mysqli, $sql, "ii", [$_SESSION['userid'], $inputData['user_id']],$exitOnError = true);
+if (!$result['insertedId']){
     onError($mysqli,"Request already sent");
 }
-$sql = "INSERT INTO `notifications` (`user_id`,`sender_id`,`notification_type`,`content`) VALUES (?,?,2,?)";
-$username = $_SESSION['username'];
-$result = executeInsert($mysqli, $sql, "iis", [$inputData['user_id'], $_SESSION['userid'], $username." Sent you a connection request"]);
-$notification_id = $result['insertedId'];
-
-$sql = "INSERT IGNORE INTO `connection_requests` (`user1_id`, `user2_id`, `notification_id`) VALUES (?, ? , ?)";
-$result = executeInsert($mysqli, $sql, "iii", [$_SESSION['userid'], $inputData['user_id'], $notification_id]);
-
 
 onSuccess($mysqli,true);

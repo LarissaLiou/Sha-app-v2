@@ -129,7 +129,6 @@ CREATE TABLE `attendees` (
 CREATE TABLE `messages` (
   `message_id` BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `sender_id` BIGINT NOT NULL,
-  `recipient_id` BIGINT NOT NULL,
   `content` TEXT NOT NULL,
   `sent_at` datetime NOT NULL DEFAULT (CURRENT_TIMESTAMP),
   `conversation_id` BIGINT NOT NULL,
@@ -192,8 +191,6 @@ ALTER TABLE `conversations` ADD CONSTRAINT `conversations_user2_id_foreign` FORE
 ALTER TABLE `messages` ADD CONSTRAINT `messages_conversation_id_foreign` FOREIGN KEY (`conversation_id`) REFERENCES `conversations` (`conversation_id`);
 
 ALTER TABLE `messages` ADD CONSTRAINT `messages_sender_id_foreign` FOREIGN KEY (`sender_id`) REFERENCES `users` (`user_id`);
-
-ALTER TABLE `messages` ADD CONSTRAINT `messages_recipient_id_foreign` FOREIGN KEY (`recipient_id`) REFERENCES `users` (`user_id`);
 
 ALTER TABLE `users_interests_junction` ADD CONSTRAINT `users_interests_junction_interest_id_foreign` FOREIGN KEY (`interest_id`) REFERENCES `interests` (`interest_id`);
 
