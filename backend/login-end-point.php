@@ -2,13 +2,14 @@
 session_start();
 include_once 'connect.inc.php';
 
-$email = $_POST['email'];
+$emailUsername = $_POST['emailUsername'];
 $password =  $_POST['password'];
 
 $_SESSION['login_attempt'] = true; //resets login attempt failure
+$_SESSION['error'] = '';
 
-$sql = 'SELECT COUNT(*) FROM users WHERE email = ? AND password = ?';
-$stmt = prepared_query($conn, $sql, [$email, $password], 'ss');
+$sql = 'SELECT COUNT(*) FROM users WHERE email = ? OR username = ? AND password = ?';
+$stmt = prepared_query($conn, $sql, [$emailUsername, $emailUsername, $password], 'sss');
 $stmt->execute();
 $stmt->bind_result($exist);
 $stmt->fetch();
@@ -21,6 +22,7 @@ if ($exist){
 } else{
     $_SESSION['loggedin'] = false;
     $_SESSION['login_attempt'] = false; //used to alert users of incorrect username or password after redirect
+    $_SESSION['error'] = 'Username or Password is incorrect';
     header("Location: ../index.php?filename=login");
 }
 

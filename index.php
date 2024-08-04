@@ -38,6 +38,22 @@ if ($loggedIn){
         case 'connect':
             include('templates/connect.tpl.php');
             break;
+
+        case 'eventInformation':
+            include('templates/eventInformation.tpl.php');
+            break;
+
+        case 'notification':
+            include('templates/notification.tpl.php');
+            break;
+
+        case 'message':
+            include('templates/message.tpl.php');
+            break;
+
+        case 'messageEach':
+            include('templates/messageEach.tpl.php');
+            break;
         
         case "search":
             include('templates/search.tpl.php');

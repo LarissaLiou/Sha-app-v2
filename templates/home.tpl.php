@@ -8,7 +8,9 @@
 
     <body>
         <section>
-            <h1>Sociate</h1>
+            <h1 id = "companyTitle">Sociate</h1>
+            <a href = "index.php?filename=notification"><img class = "headerIcons" src = 'static/assets/notificationIcon.png'></a>
+            <a href = "index.php?filename=message"><img class = "headerIcons" src = 'static/assets/messageIcon.png'></a>
         </section>
 
         <section>
@@ -33,7 +35,7 @@
             </p>
             <div class = "flexleft">
                 <div class = "grid2"> <!-- due to php includes for the footer, there is clashing css -->
-                    <img class = "eventImage" src = "static/assets/pfp.jpeg">
+                    <img class = "eventImage discoverimage" src = "static/assets/pfp.jpeg">
                     <div>
                         <span class = "eventName">Event1</span>
                         <span class = "eventcity">Singapore</span>,
@@ -53,10 +55,10 @@
 
 
                 <div class = "grid2"> <!-- due to php includes for the footer, there is clashing css -->
-                    <img class = "eventImage" src = "static/assets/pfp.jpeg">
+                    <img class = "eventImage discoverimage" src = "static/assets/pfp.jpeg">
                     <div>
                         <span class = "eventName">Event1</span>
-                        <span class = "eventcity">Singapore</span>,
+                        <span class = "eventcity">Singapore</span>
                         <span class = "eventState">Singapore</span>
                     </div>
 
@@ -81,7 +83,7 @@
             </p>
             <div class = "flexleft">
                 <div class = "grid2"> <!-- due to php includes for the footer, there is clashing css -->
-                    <img class = "eventImage" src = "static/assets/pfp.jpeg">
+                    <img class = "eventImage discoverimage" src = "static/assets/pfp.jpeg">
                     <div>
                         <span class = "eventName">Event1</span>
                         <span class = "eventcity">Singapore</span>,
@@ -101,7 +103,7 @@
                 
 
                 <div class = "grid2"> <!-- due to php includes for the footer, there is clashing css -->
-                    <img class = "eventImage" src = "static/assets/pfp.jpeg">
+                <img class = "eventImage discoverimage" src = "static/assets/pfp.jpeg">
                     <div>
                         <span class = "eventName">Event1</span>
                         <span class = "eventcity">Singapore</span>,
@@ -120,5 +122,6 @@
                 </div>
             </div>
         </section>
+        <script src = "static/js/home.js"></script>
     </body>
 </html>
