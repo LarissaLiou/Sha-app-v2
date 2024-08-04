@@ -16,6 +16,7 @@ CREATE TABLE `notifications` (
 CREATE TABLE `events` (
   `event_id` BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `event_name` TEXT NOT NULL,
+  `event_image` TEXT NOT NULL,
   `min_price` BIGINT NOT NULL,
   `max_price` BIGINT COMMENT 'null if just use min_price',
   `min_attendees` BIGINT NOT NULL,

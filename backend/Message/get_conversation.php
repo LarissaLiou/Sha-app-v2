@@ -18,7 +18,6 @@ function getMessages($mysqli,$conversation_id,$last_updated,$user_id){
             LEFT JOIN `user_details` ON `user_details`.`user_id` = `sender_id`
             WHERE `conversation_id` = ? AND `sent_at` > ?";
     $result = executeSelect($mysqli, $sql, "iii", [$user_id,$conversation_id,$last_updated],true);
-    print_r($result);
     return $result['data'];
 }
 

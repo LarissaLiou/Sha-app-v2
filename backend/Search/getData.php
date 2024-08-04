@@ -2,8 +2,9 @@
 require_once '../Defaults/validate.inc.php';
 require_once '../Defaults/connect.inc.php';
 
-$sqlUsers = "SELECT `user_id`,`user_handle`,`username` FROM `users`";
-$sqlEvents = "SELECT `events`.`event_id`,`event_name`,`min_price`,`max_price`,`min_attendees`,
+$sqlUsers = "SELECT `users`.`user_id`,`user_handle`,`username`,`profile_picture` FROM `users`
+            LEFT JOIN `user_details` ON `users`.`user_id` = `user_details`.`user_id`";
+$sqlEvents = "SELECT `events`.`event_id`,`event_name`,`event_image`,`min_price`,`max_price`,`min_attendees`,
             `max_attendees`,`description`,`location`,`start`,`end`,
             `event_types`.`event_type_id`,`event_types`.`event_type` 
             FROM `events` 
@@ -19,6 +20,7 @@ foreach ($eventData as $row) {
     if (!isset($events[$eventId])) {
         $events[$eventId] = [
             'event_id' => $eventId,
+            'event_image' => $row['event_image'],
             'event_name' => $row['event_name'],
             'min_price' => $row['min_price'],
             'max_price' => $row['max_price'],
@@ -38,5 +40,4 @@ foreach ($eventData as $row) {
         ];
     }
 }
-
 echo json_encode(['users' => $userData, 'events' => $events]);
