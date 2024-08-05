@@ -1,5 +1,60 @@
 const containers = document.querySelectorAll('.container');
 let initialX = null, currentX = null;
+var profileData = null
+var currentProfile = null
+
+function setUpInterests(container,interests){
+  const interestContainer = container.querySelector(".interest-container")
+  interestContainer.innerHTML = ""
+  for (var interest of interests){
+    const interestElement = createEle("div",["interest"],null,{"textContent":interest['interest']},{"backgroundColor":interest['color']})
+    interestContainer.appendChild(interestElement)
+  }
+}
+function setCard(container,profileNum){
+  profileNum = (profileNum+profileData.length) % profileData.length
+  console.log(profileNum)
+  profile = profileData[profileNum]
+  container.querySelector(".profile-img").src = profile.profile_picture
+  container.querySelector(".profile-img").onerror = () => {
+    container.querySelector(".profile-img").src = "static/assets/default.png"
+  }
+  container.querySelector(".name").textContent = profile.username
+  container.querySelector(".location").textContent = profile.location
+  container.querySelector(".about").textContent = profile.about
+  container.querySelector(".view").onclick = () => {
+    window.location.href = `index.php?filename=${profile.user_id}`
+  }
+  container.querySelector(".connect").onclick = async function(){
+    console.log(profile.user_id)
+    console.log("Ran")
+    this.innerText = "Connecting..."
+    const response = await postRequest("backend/Connect/connect.php",{"user_id":profile.user_id})
+    if (response.success){
+      this.innerText = "Requested!"
+      this.disabled = true
+    }
+    else{
+      this.innerText = response.error
+    }
+  }
+  setUpInterests(container,profile.interests)
+}
+
+function setUpAllCards(currentProfile){
+  setCard(containers[0],currentProfile-1)
+  setCard(containers[1],currentProfile)
+  setCard(containers[2],currentProfile+1)
+}
+async function setUp(){
+  const {profiles} = await getRequest("backend/Connect/recommendations.php",{"count":100})
+  console.log(profiles)
+  profileData = profiles
+  currentProfile = Math.floor(profileData.length/2)
+  setUpAllCards(currentProfile)
+}
+
+
 function dragStart(event) {
     initialX = event.clientX || event.touches[0].clientX;
     for (var container of containers) {
@@ -61,6 +116,7 @@ function reassignClasses(closest) {
       "before":"after"
     }
   }
+  const closestType = closest.type
   containers.forEach(container => {
     // Re-enable transition for smooth return to place or snap to grid
     container.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out';
@@ -73,7 +129,7 @@ function reassignClasses(closest) {
       container.style.setProperty("--currentness",0.5)
     }
   });  
-  if (closest.type == "current") return;
+  if (closestType == "current") return;
   const usedList = toMoveList[closest.type]
   containers.forEach(container =>{
     for (var classOf of container.classList){
@@ -87,7 +143,16 @@ function reassignClasses(closest) {
       break 
     }
   })
-  addNewCard
+
+  if (closestType == "before"){
+    currentProfile--  
+  }
+  else{
+    currentProfile++
+  }
+  currentProfile %= profileData.length
+  setUpAllCards(currentProfile)
+
 }
 
 function addNewCard(container){
@@ -119,3 +184,4 @@ document.addEventListener("touchmove",dragEventListener)
 document.addEventListener("mouseup",dragStop)
 document.addEventListener("touchend",dragStop)
 
+setUp()

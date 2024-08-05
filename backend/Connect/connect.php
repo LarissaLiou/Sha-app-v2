@@ -16,8 +16,8 @@ $presenceCheck = ["user_id"];
 // $inputData = validateData(INPUT_GET, $filterOptions, [], $presenceCheck);
 $inputData = validateData(INPUT_POST, $filterOptions, [], $presenceCheck);
 
-$sql = "SELECT `user1_id`,`user2_id` FROM `connection_requests` WHERE `user1_id` = ? OR `user2_id` = ?";
-$connection = executeSelect($mysqli, $sql, "ii", [$_SESSION['userid'], $_SESSION['userid']]);
+$sql = "SELECT `user1_id`,`user2_id` FROM `connection_requests` WHERE `user1_id` = ? AND `user2_id` = ?";
+$connection = executeSelect($mysqli, $sql, "ii", [$_SESSION['userid'], $inputData['user_id']]);
 if ($connection['num_rows'] > 0){
     onError($mysqli,"Request already sent");
 }
