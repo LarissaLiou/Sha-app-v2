@@ -2,9 +2,9 @@
 <html>
     <head>
         <title>Interest page</title>
-        <link rel = "stylesheet" href = "static/css/interest.css">
+        <link rel = "stylesheet" href = "../static/css/interest.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src = "static/js/interest.js"></script>
+        <script src = "../static/js/interest.js"></script>
     </head>
 
     <body>
@@ -16,72 +16,72 @@
         <section id = "interestSelection" class = "grid">
 
             <div class = 'grid-items grid2'>
-                <img src = 'static/assets/climateChange.png' alt = 'Climate Change'>
+                <img src = '../static/assets/climateChange.png' alt = 'Climate Change'>
                 <span class = "text">Climate Change</span>
             </div>
 
             <div class = 'grid-items grid2'>
-                <img src = 'static/assets/education.png' alt = 'Education'>
+                <img src = '../static/assets/education.png' alt = 'Education'>
                 <span class = "text">Education</span>
             </div>
 
             <div class = 'grid-items grid2'>
-                <img src = 'static/assets/genderEquality.png' alt = 'Gender Equality'>
+                <img src = '../static/assets/genderEquality.png' alt = 'Gender Equality'>
                 <span class = "text">Gender Equality</span>
             </div>
 
             <div class = 'grid-items grid2'>
-                <img src = 'static/assets/technology.png' alt = 'Technology'>
+                <img src = '../static/assets/technology.png' alt = 'Technology'>
                 <span class = "text">Technology</span>
             </div>
 
             <div class = 'grid-items grid2'>
-                <img src = 'static/assets/biodiversity.png' alt = 'Biodiversity'>
+                <img src = '../static/assets/biodiversity.png' alt = 'Biodiversity'>
                 <span class = "text">Biodiversity</span>
             </div>
 
             <div class = 'grid-items grid2'>
-                <img src = 'static/assets/mentalHealth.png' alt = 'Mental Health'>
+                <img src = '../static/assets/mentalHealth.png' alt = 'Mental Health'>
                 <span class = "text">Mental Health</span>
             </div>
             
             <div class = 'grid-items grid2'>
-                <img src = 'static/assets/healthcare.png' alt = 'Healthcare'>
+                <img src = '../static/assets/healthcare.png' alt = 'Healthcare'>
                 <span class = "text">Healthcare</span>
             </div>
 
             <div class = 'grid-items grid2'>
-                <img src = 'static/assets/politics.png' alt = 'Politics'>
+                <img src = '../static/assets/politics.png' alt = 'Politics'>
                 <span class = "text">Politics</span>
             </div>
 
             <div class = 'grid-items grid2'>
-                <img src = 'static/assets/warAndMilitaryConflicts.png' alt = 'War and Military Conflicts'>
+                <img src = '../static/assets/warAndMilitaryConflicts.png' alt = 'War and Military Conflicts'>
                 <span class = "text">War and Military Conflicts</span>
             </div>
 
             <div class = 'grid-items grid2'>
-                <img src = 'static/assets/poverty.png' alt = 'Poverty'>
+                <img src = '../static/assets/poverty.png' alt = 'Poverty'>
                 <span class = "text">Poverty</span>
             </div>
 
             <div class = 'grid-items grid2'>
-                <img src = 'static/assets/inequality.png' alt = 'Inequality'>
+                <img src = '../static/assets/inequality.png' alt = 'Inequality'>
                 <span class = "text">Inequality</span>
             </div>
 
             <div class = 'grid-items grid2'>
-                <img src = 'static/assets/worldHunger.png' alt = 'World Hunger'>
+                <img src = '../static/assets/worldHunger.png' alt = 'World Hunger'>
                 <span class = "text">World Hunger</span>
             </div>
 
             <div class = 'grid-items grid2'>
-                <img src = 'static/assets/artsAndMusic.png' alt = 'Arts and Music'>
+                <img src = '../static/assets/artsAndMusic.png' alt = 'Arts and Music'>
                 <span class = "text">Arts and Musics</span>
             </div>
 
             <div class = 'grid-items grid2'>
-                <img src = 'static/assets/sports.png' alt = 'Sports'>
+                <img src = '../static/assets/sports.png' alt = 'Sports'>
                 <span class = "text">Sports</span>
             </div>        
         </section>

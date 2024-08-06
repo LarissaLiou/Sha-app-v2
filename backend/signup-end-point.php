@@ -41,7 +41,15 @@ if ($exist == true){
         $stmt->execute();
         $stmt->close();
     }
+    // $sql1 = 'INSERT INTO user_datails VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    //     $date1 = date('Y-m-d H:i:s');
+    //     $stmt1 = prepared_query($conn, $sql1, ['', '', '', '', '', '', $date1, '', ''], 'sssssssss');
+    //     $stmt1->execute();
+    //     $stmt1->close();
+    // }
+
     $_SESSION['loggedin'] = true;
-    header("Location: ../index.php?filename=home");
+    header("Location: ../index.php?filename=interest3");
 }
 ?>

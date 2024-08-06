@@ -1,9 +1,9 @@
 <?php
-$servername = "127.0.0.1"; // for default: 127.0.0.1 
-$username = "root"; // for x10: pjjabycm_ctfdb | for others: root
-$password = ""; // for x10: q6sFckv3 
-$db_name = "sociatedb"; // for x10: pjjabycm_ctfdb 
-$conn = new mysqli($servername,$username,$password,$db_name);
+$db_servername = "127.0.0.1:4306"; // for default: 127.0.0.1 
+$db_username = "root"; // for x10: pjjabycm_ctfdb | for others: root
+$db_password = ""; // for x10: q6sFckv3 
+$db_name = "sociatedb2"; // for x10: pjjabycm_ctfdb 
+$conn = new mysqli($db_servername,$db_username,$db_password,$db_name);
 
 function prepared_query($mysqli, $sql, $params, $types = "")
 {
@@ -18,4 +18,9 @@ function prepared_query($mysqli, $sql, $params, $types = "")
     }
     return $stmt;
 }
+
+// if($conn){
+//     echo "Connect is successfully";
+// }
+
 ?>

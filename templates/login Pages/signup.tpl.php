@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="static/css/login.css">
-    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/login.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src = "login.js" defer>  </script>
 </head>
@@ -16,7 +16,7 @@
             <h2>Lorem ipsum dolor sit amet, consectetur</h2>
         </section>
         <main>
-            <form class = "login_form" action="backend/signup-end-point.php" method="post">
+            <form class = "login_form" action="../../backend/signup-end-point.php" method="post">
                 <input class = "login-button" type="email" id="email" name="email" placeholder="Username" aria-label="Username" required>
                 <input class = "login-button" type="password" id="password" name="password1" placeholder="Password" aria-label="Password" required>
                 <input class = "login-button" type="password" id="password" name="password2" placeholder="Confirm Password" aria-label="Confirm Password" required>
@@ -26,9 +26,9 @@
             <div>
                 <p class = "text--small">Sign up with</p>
                 <div class = "social-login-buttons">
-                    <button class="google"><img src="static/assets/google.png" alt="Google"></button>
-                    <button class="facebook"><img src="static/assets/facebook.png" alt="Facebook"></button>
-                    <button class="apple"><img src="static/assets/apple.png" alt="Apple"></button>
+                    <button class="google"><img src="../../static/assets/google.png" alt="Google"></button>
+                    <button class="facebook"><img src="../../static/assets/facebook.png" alt="Facebook"></button>
+                    <button class="apple"><img src="../../static/assets/apple.png" alt="Apple"></button>
                 </div>
             </div>
         </main>

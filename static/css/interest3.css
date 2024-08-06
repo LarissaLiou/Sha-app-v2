@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  background-color: #e2e6f1;
+  z-index: 1;
+}
+
+.nav-logo {
+  background-color: #0b132b;
+  color: white;
+  font-weight: 600;
+  font-style: italic;
+  padding: 0.5rem;
+  margin-right: auto;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.bg-div {
+  background-color: white;
+  text-align: left;
+  padding: 0.2rem 1rem;
+}
+
+.bg-div h2 {
+  color: black;
+  font-weight: 500;
+  font-size: x-large;
+  font-style: italic;
+  padding: 0.5rem;
+}
+
+.interestSelection {
+  /* display: flex; */
+  background-color: #e8e5e5;
+  border-radius: 40px;
+  padding: 20px 5px;
+  height: 85vh;
+  transform: translateY(1.5rem);
+  /* padding-left: 0;
+    padding-right: 0; */
+  overflow-y: auto;
+}
+
+.interestSelection h3 {
+  color: #4f4c4c;
+  font-weight: 700;
+  font-size: x-large;
+  font-style: normal;
+}
+
+.interests-div {
+  /* background-color: rgb(44, 48, 61); */
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(10, auto);
+  overflow-x: auto;
+}
+
+.interest-items {
+  background-color: #c1c1c1;
+  color: rgb(58, 57, 57);
+  border-radius: 100px;
+  padding: 10px;
+  margin: 5px;
+  font-size: xx-small;
+  text-align: center;
+  /* unicode-bidi: isolate; */
+}
+
+.interest-items:hover {
+  background-color: #9c9999;
+}
+
+.interest-items .interest-name {
+  color: black;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: large;
+  font-style: normal;
+}
+
+.footer-div {
+  position: sticky;
+  bottom: 0;
+  padding-right: 10;
+  background-color: #3a506b;
+  align-content: center;
+  height: 6vh;
+}
+
+.footer-div2 {
+  display: flex;
+  margin-top: 10;
+  margin-bottom: 10;
+}
+
+.submitBtn {
+  margin-left: auto;
+  margin-right: 30;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #0b132b;
+  color: white;
+  font-size: large;
+  font-weight: 500;
+}
+.submitBtn:hover {
+  background-color: #1d263f;
+}
+
+/* .div1 {
+    background-color: #0073ff;
+    padding: 40;
+  } */
+
+footer {
+  padding: 1rem;
+  display: flex;
+  text-align: center;
+  background-color: #0b132b;
+}
+
+footer span {
+  color: aliceblue;
+  font-size: small;
+  margin-left: auto;
+  margin-right: auto;
+}

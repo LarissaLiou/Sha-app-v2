@@ -28,6 +28,10 @@ if ($loggedIn){
             include('templates/interest2.tpl.php');
             break;
 
+        case 'interest3':
+            include('templates/interest3.tpl.php');
+            break;
+
         case 'profile':
             include('templates/profile.tpl.php');
             break;
