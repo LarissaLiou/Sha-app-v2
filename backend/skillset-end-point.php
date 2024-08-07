@@ -2,7 +2,7 @@
 session_start();
 include_once 'connect.inc.php';
 
-$interest = $_POST['selectedInterest'];
+$skillset = $_POST['selectedSkillset'];
 
 //retrieve user id
 $user_id = '';
@@ -15,18 +15,18 @@ $stmt->close();
 
 
 //insert into interest table
-$interest_id = $user_id; //interest_id = user_id
-$sql = 'INSERT INTO interests VALUES (?, ?)';
-$stmt = prepared_query($conn, $sql, [$interest_id, $interest], 'is');
+$skillset_id = $user_id; //interest_id = user_id
+$sql = 'INSERT INTO skillsets VALUES (?, ?)';
+$stmt = prepared_query($conn, $sql, [$skillset_id, $skillset], 'is');
 $stmt->execute();
 $stmt->close();
 
 //interest into interest junction table
-$sql = 'INSERT INTO users_interests_junction VALUES (?, ?)';
-$stmt = prepared_query($conn, $sql, [$user_id, $interest_id], 'ii');
+$sql = 'INSERT INTO users_skillset_junction VALUES (?, ?)';
+$stmt = prepared_query($conn, $sql, [$user_id, $skillset_id], 'ii');
 $stmt->execute();
 $stmt->close();
 
 
-header('Location: ../index.php?filename=interest2');
+header('Location: ../index.php?filename=home');
 ?>

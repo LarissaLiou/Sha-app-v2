@@ -13,7 +13,7 @@
             <p>Moving on, what are some of your skill sets?</p>
         </section>
 
-        <section id = "interestSelection" class = "grid2">
+        <form id = "interestSelection" class = "grid2" action = 'backend/skillset-end-point.php' method = 'post'>
 
             <div class = "interestGroup">
                 <span class = "interestHeader">Technology</span>
@@ -61,9 +61,9 @@
                 </div>
             </div>
 
-        </section>
+            <input id = "selectedSkillset" name = "selectedSkillset" hidden>
 
-        <section id = 'submitSection'>
-            <a href = 'index.php?filename=home'><button>That's all!</button></a>
-            <a href = 'index.php?filename=home'><button>I don't really know yet...</button></a>
-        </section>
+            <button type = "submit">That's all!</button>
+            <button onclick = "removeAll()" type = "submit">I don't really know yet...</button>
+            <br>
+        </form>

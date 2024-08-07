@@ -5,7 +5,6 @@ $filename = isset($_GET['filename']) ? $_GET['filename'] : "";
 
 $loggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true;
 
-
 if ($loggedIn){
     switch($filename){
         // case 'login':
@@ -58,7 +57,7 @@ if ($loggedIn){
 
     include 'templates/footer/footer.tpl.php';
 } else{
-    session_reset();
+    // session_reset();
     switch($filename){
         case 'login':
             include('templates/login Pages/login.tpl.php');

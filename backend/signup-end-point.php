@@ -2,8 +2,8 @@
 session_start();
 include_once 'connect.inc.php';
 
-$email = $_POST['username'];
-$username = $_POST['email'];
+$email = $_POST['email'];
+$username = $_POST['username'];
 $password1 = $_POST['password1'];
 $password2 = $_POST['password2'];
 echo $password1, $password2;
@@ -47,18 +47,22 @@ if ($existUsername == true){
     $_SESSION['error'] = 'Username already exists';
     header("Location: ../index.php?filename=signup");
 } else{
+    //hashing the password
+    $salt = 'apsojvpscpoxnkm';
+    $hash = hash('sha256', $password . $salt);
     $sql = 'INSERT INTO users VALUES (?, ?, ?, ?, ?, ?)';
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $date = date('Y-m-d H:i:s');
-        echo("Query: " . $sql);
-        $stmt = prepared_query($conn, $sql, ['', '', $username, $email, $password, $date], 'ssssss');
-        if ($stmt == false) {
-            echo("oops!");
-        }
+        $stmt = prepared_query($conn, $sql, ['', '', $username, $email, $hash, $date], 'ssssss');
         $stmt->execute();
         $stmt->close();
     }
     $_SESSION['loggedin'] = true;
+
+    //set up session email to recognise user
+    $_SESSION['emailUsername'] = $email;
+
+
     header("Location: ../index.php?filename=interest");
 }
 ?>
