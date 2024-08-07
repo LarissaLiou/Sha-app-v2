@@ -50,6 +50,11 @@ if ($exist == true){
     // }
 
     $_SESSION['loggedin'] = true;
+
+    // for testing
+    $_SESSION['password'] = $password;
+    $_SESSION['username'] = $_POST["email"];
+
     header("Location: ../index.php?filename=interest3");
 }
 ?>

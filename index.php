@@ -55,6 +55,9 @@ if ($loggedIn){
         case 'messageEach':
             include('templates/messageEach.tpl.php');
             break;
+        case 'error':
+            include('templates/error.tpl.php');
+            break;
         
         default:
             include('templates/home.tpl.php');

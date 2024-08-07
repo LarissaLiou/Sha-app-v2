@@ -246,10 +246,11 @@ INSERT INTO `interest_categories` (`category_id`, `category_name`) VALUES  (1, '
 
 
 
-INSERT INTO `interests` (`interest_id`, `interest_name`, `category_id`, `category_name`) VALUES  (1, 'Digital_Art', 1, 'Art_and_Culture'), 
+INSERT INTO `interests` (`interest_id`, `interest_name`, `category_id`, `category_name`) 
+VALUES  (1, 'Digital Art', 1, 'Art_and_Culture'), 
         (2, 'Drawing', 1, 'Art_and_Culture'), 
         (3, 'Music', 1, 'Art_and_Culture'), 
-        (4, 'Real_Estate', 2, 'Career_and_Business'), 
+        (4, 'Real Estate', 2, 'Career_and_Business'), 
         (5, 'Startup', 2, 'Career_and_Business'), 
         (6, 'Marketing', 2, 'Career_and_Business'),
         (7, 'Software Development', 3, 'Technology '),

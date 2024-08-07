@@ -1,11 +1,4 @@
-<?php
-    // session_start();
-    $string_version = implode(',', $_SESSION);
-    echo $string_version . "<br>";
-    echo $_SESSION["email"] . "<br>";
-    echo $_SESSION["password"] . "<br>";
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,9 +21,9 @@
                         Pick Your Interests
                     </h2>
                 </div>
-                    <!-- <div class="w-full p-8 mb-16 bg-gray-200 rounded-3xl"> -->
+                    <form class="" id="interestForm" action="backend/interest3-end-point.php" method="POST">
                         <div id="interestSelection" class="interestSelection">
-                            <?php 
+                            <?php
                                 $fetchInterests = [
                                     'Art_and_Culture' => [
                                         'Digital_Art' => ['name' => 'Digital Art', 'selected' => false, 'interest_type' => 'Art_and_Culture'],
@@ -66,28 +59,26 @@
                                 <div class="interests-div">
                                     <?php foreach ($interests as $key => $interest) : ?>
                                         <div class="interest-items">
-                                            <span class="interest-name"><?php echo $interest['name']; ?></span>
+                                            <span class="interest-name" name="interestName"><?php echo $interest['name']; ?></span>
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
                             <?php endforeach; ?>
-                            
+                            <input type="hidden" id="interestsArray" name="interestsArray">
                         </div>
                         
-                        <div class="footer-div">
-                            <div class="footer-div2">
-                                <button class="submitBtn" id="submitBtn">
+                        <div class="submit-div">
+                            <div class="submit-div2">
+                                <button type="submit" class="submitBtn" id="submitBtn">
                                     Next
                                 </button>
                             </div>
                         </div>
-                    <!-- </div> -->
+                    </form>
         </section>
-        <footer>
-            <!-- <div> -->
-                <span>© All Rights Reserved Socialite</span>
-            <!-- </div> -->
-        </footer>
+        <!-- <footer>
+                <span>© Sociate</span>
+        </footer> -->
         
     <script src="static/js/interest3.js"></script>
     

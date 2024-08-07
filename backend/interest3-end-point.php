@@ -1,46 +1,52 @@
 <?php
+session_start();
+$jsonArray = $_POST['interestsArray'];
+$interestArray = json_decode($jsonArray, true);
+// print_r($interestArray); // Just to see what was received
+// echo $jsonArray;
+// echo $interestArray;
+include_once 'connect.inc.php';
+$username = $_SESSION['username'];
 
-    session_start();
-    $string_version = implode(',', $_SESSION);
-    // echo $string_version . "<br>";
-    // echo $_SESSION["email"] . "<br>";
-    // echo $_SESSION["password"] . "<br>";
+$exist = false;
+$sql = 'SELECT COUNT(*) FROM users WHERE email = ?';
+$stmt = prepared_query($conn, $sql, [$username], 's');
+$stmt->execute();
+$stmt->bind_result($exist);
+$stmt->fetch();
+$stmt->close();
 
+if ($exist == true) {
+    $conn->begin_transaction();
 
-    include_once "connect.inc.php";
-
-// if(isset($_POST['name']) || isset($_POST['age']) || isset($_POST['country'])){
-    $input=file_get_contents("php://input");
-    $response = [];
-
-    $decoded_input=json_decode($input, true);
-    $response['decoded_input'] = $decoded_input;
-    $response['session_value'] = $string_version;
-
-    $username=$_SESSION['username'];
-    // $password=$_SESSION['password'];
-    // $email=$_SESSION['email'];
-
-    $sql=   "INSERT INTO user_interest_junction (`user`, `interest`) 
-            VALUES ((select `user_id` from users where `username` = '{$username}'),(select `interest_id` from interests where `name` = '{$decoded_input}'))
+    try {foreach ($interestArray as $interest){
+        echo"$interest <br>";
+        $successAddInterest = false;
+        $sql =  "INSERT INTO users_interests_junction (`user_id`, `interest_id`) 
+             VALUES  (
+                     (select `user_id` from users where `email` = ?),
+                     (select `interest_id` from interests where `interest_name` = ?)
+                     )
             ";
-    $run_sql=mysqli_query($conn,$sql);
-    // echo $run_sql;
-
-    // $sql=   "select `interest_id` from interests where `name` = '{$decoded_input}'";
-    // $run_sql=mysqli_query($conn,$sql);
-
-    // if ($row = $run_sql->fetch_assoc()) {
-    //     echo implode(',', $row);
-    // }
-
-
-    if($run_sql){
-        echo json_encode(["success"=>true, "message"=>"Successfully added '{$decoded_input}' to username: '{$username}'"]);
-        header("Location: ../index.php?filename=home");
-    } else {
-        echo json_encode(["success"=>false, "message"=>"Failed to add '{$decoded_input}' to username: '{$username}'"]);
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('is', $username, $interest);
+        if (!$stmt->execute()) {
+            throw new Exception('Insert failed: ' . $stmt->error);
+        }
+         $stmt->close();
     }
-// }
+    $conn->commit();
 
+    // Redirect to home page
+    header("Location: ../index.php?filename=home");
+    exit;
+    } catch (Exception $e) {
+        $conn->rollback();
+        echo $e;
+        // Handle error (e.g., log it, display a message to the user)
+        $_SESSION['error'] = "Failed to add interests. Please try again.: '{$e}'";
+        header("Location: ../index.php?filename=error");
+        exit;
+    }
+}
 ?>
