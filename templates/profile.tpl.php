@@ -4,12 +4,16 @@
         <title>Profile page</title>
         <link rel = "stylesheet" href = "static/css/profile.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src = "static/js/default.js"></script>
         <script src = "static/js/profile.js"></script>
+        
     </head>
 
     <body>
         <section id = "followers">
-            <div class = "size1">🡰 &nbsp;<span class = "bold">Profile</span><a href = 'backend/logout-end-point.php'><button id = 'logout' href = >Log out</button></a></div>
+            <a href = "index.php?filename=home" id = "goBack"><span class = "mediumSize">🡰</span></a>&nbsp;&nbsp;&nbsp;
+            <h1 class = "bold">Profile</h1>
+            <a href = 'index.php?filename=logout'><button id = 'logout' href = >Log out</button></a></div>
             <br>
 
             <div class = "grid1">
@@ -27,7 +31,7 @@
                         <div id = "followiconbackground">
                             <img id = "followicon" src = "static/assets/followicon.png">
                         </div>
-                        <button id = "messagebutton">Message</button>
+                        <button id = "messagebutton" onclick = "sendMessageRequest(this)">Message</button>
                     </div>
                 </div>
             </div>

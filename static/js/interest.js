@@ -9,7 +9,8 @@ function selectCategory(){
         this.style.backgroundColor = 'white'
         selected.splice(selected.indexOf(this.getElementsByClassName('text')[0].innerHTML), 1)
     }
-    console.log(selected)
+    interest = document.getElementById('selectedInterest')
+    interest.value = JSON.stringify(selected)
 }
 
 function initialise(){ /*initialise the selectCategory function to selectables and make them white to prevent errors in selectCategory */
@@ -18,6 +19,10 @@ function initialise(){ /*initialise the selectCategory function to selectables a
         interest.addEventListener('click', selectCategory)
         interest.style.backgroundColor = 'white'
     }
+}
+
+function removeAll(){
+    interest = document.getElementById('selectedInterest')
 }
 
 window.onload = initialise
