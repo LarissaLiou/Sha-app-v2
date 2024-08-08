@@ -47,9 +47,9 @@ if ($loggedIn){
             include('templates/message.tpl.php');
             break;
 
-        case 'messageEach':
-            include('templates/messageEach.tpl.php');
-            break;
+        // case 'messageEach':
+        //     include('templates/messageEach.tpl.php');
+        //     break;
         
         default:
             include('templates/home.tpl.php');
