@@ -29,8 +29,9 @@ body{
     'a b z'
     'a c d';
     place-items: center left;
-    height: 8vh;
-    margin: 2vh 0;
+    height: 3em;
+    column-gap:1em;
+    padding: 0.5em;
 }
 
 .messageGrid:hover{
@@ -60,14 +61,16 @@ body{
 
 .requestGrid{
     display: grid;
-    grid-template-columns: 15% 55% 5% 25%;
+    grid-template-columns: 15% 55% 30%;
     grid-template-rows: 50% 50%;
     grid-template-areas:
-    'a b z e'
-    'a c d f';
+    'a b e'
+    'a c f';
     place-items: center left;
-    height: 8vh;
-    margin: 2vh 0;
+    height: 3em;
+    column-gap:1em;
+    width:100%;
+    box-sizing: border-box;
 }
 
 .requestPfp{
@@ -77,6 +80,7 @@ body{
 .requestName{
     grid-area: b;
     font-size: 0.8rem;
+    font-weight: bold;
 }
 
 .requestPreview{
@@ -102,7 +106,6 @@ body{
     padding: 0.1rem;
     border: 1px solid black;
     width: 20vw;
-    margin: 2vh;
     border-radius: 1rem;
     font-size: 0.8rem;
 }
@@ -120,9 +123,8 @@ body{
 .eachPerson{
     border: 2px solid #5BC0BE;
     border-radius: 100%;
-    height: 8vh;
-    width: auto;
-    margin: 0 0.2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #goBack{
@@ -158,3 +160,20 @@ section{
 /* .scroll-container::-webkit-scrollbar {
     display: none;
   } */
+
+#messageContent{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.messageName{
+    font-weight: bold;
+}
+
+#requestContent{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem;
+}

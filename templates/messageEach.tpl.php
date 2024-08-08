@@ -8,8 +8,9 @@
     </head>
     <body>
         <nav class = "message_nav">
-            <img class = "back" src = "static/assets/back.png" alt = "back">
-            <img class = "profile" alt = "profile" src = "static/assets/default.png">
+            <a href = "index.php?filename=message">
+                <img class = "back" src = "static/assets/back.png" alt = "back"></a>
+            <img class = "profile" alt = "profile" src = "static/assets/default.png" onerror = "this.src = 'static/assets/default.png'">
             <h3 class = "profile_user">User</h3>
         </nav>
         <div class = "conversation">

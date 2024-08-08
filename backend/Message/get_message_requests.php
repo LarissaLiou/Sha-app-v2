@@ -8,8 +8,9 @@ if (!verify_login($mysqli)){
 }
 $userId = $_SESSION['userid'];
 
-$sql = "SELECT `request_id`,`sender_id`,`username`,`sent_at` FROM `message_requests` 
+$sql = "SELECT `request_id`,`sender_id`,`username`,`sent_at`,`profile_picture` FROM `message_requests` 
         JOIN `users` ON `sender_id` = `user_id` 
+        JOIN `user_details` ON `user_details`.`user_id` = `users`.`user_id`
         WHERE `recipient_id` = ?";
 
 $result = executeSelect($mysqli, $sql, "i", [$userId]);

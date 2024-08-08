@@ -6,7 +6,7 @@ function checkUserInConversation($mysqli,$conversation_id,$user_id){
     $sql = "SELECT `conversation_id`,`username`,`profile_picture` 
     FROM `conversations` 
     LEFT JOIN `users` ON 
-    `users`.`user_id` = CASE WHEN `user1_id` = ? THEN `user1_id` ELSE `user2_id` END
+    `users`.`user_id` = CASE WHEN `user1_id` = ? THEN `user2_id` ELSE `user1_id` END
     LEFT JOIN `user_details` ON `user_details`.`user_id` = `users`.`user_id`
     WHERE `conversation_id` = ? AND (`user1_id` = ? OR `user2_id` = ?)
     ";

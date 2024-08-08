@@ -3,7 +3,9 @@
     <head>
         <title>Homepage</title>
         <link rel = "stylesheet" href = "static/css/home.css">
+        <link rel = "stylesheet" href = "static/css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src = "static/js/default.js"></script>
     </head>
 
     <body>
@@ -13,8 +15,8 @@
             <a href = "index.php?filename=message"><img class = "headerIcons" src = 'static/assets/messageIcon.png'></a>
         </section>
 
-        <section>
-            <p class = "bold">Discover</p>
+        <!-- <section>
+            <h2 class = "bold">Discover</h2>
             <div class = "flexleft">
                 <img class = "discoverimage" src = "static/assets/pfp.jpeg">
                 <img class = "discoverimage" src = "static/assets/pfp.jpeg">
@@ -26,14 +28,14 @@
                 <img class = "discoverimage" src = "static/assets/pfp.jpeg">
                 <img class = "discoverimage" src = "static/assets/pfp.jpeg">
             </div>
-        </section>
+        </section> -->
 
         <section>
-            <p>
+            <h2>
                 <span class = "bold">Events Near You</span>
-                <span class = "right">➔</span>
-            </p>
-            <div class = "flexleft">
+                <!-- <span class = "right">➔</span> -->
+            </h2>
+            <div class = "flexleft near">
                 <div class = "grid2"> <!-- due to php includes for the footer, there is clashing css -->
                     <img class = "eventImage discoverimage" src = "static/assets/pfp.jpeg">
                     <div>
@@ -77,12 +79,11 @@
 
 
         <section>
-            <p>
+            <h2>
                 <span class = "bold">Events Based on interest</span>
-                <span class = "right">➔</span>
-            </p>
-            <div class = "flexleft">
-                <div class = "grid2"> <!-- due to php includes for the footer, there is clashing css -->
+            </h2>
+            <div class = "flexleft interest">
+                <div class = "grid2"> 
                     <img class = "eventImage discoverimage" src = "static/assets/pfp.jpeg">
                     <div>
                         <span class = "eventName">Event1</span>
@@ -102,7 +103,7 @@
                 </div>
                 
 
-                <div class = "grid2"> <!-- due to php includes for the footer, there is clashing css -->
+                <div class = "grid2"> 
                 <img class = "eventImage discoverimage" src = "static/assets/pfp.jpeg">
                     <div>
                         <span class = "eventName">Event1</span>
