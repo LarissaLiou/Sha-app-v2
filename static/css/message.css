@@ -1,0 +1,160 @@
+body{
+    overflow-x: hidden;
+}
+
+.button{
+    border: 0px solid black;
+    border-radius: 0.6rem;
+    padding: 0.5rem 0.4rem;
+    margin: 0.5rem;
+    background-color: #d9d9d9;
+    font-weight: bold;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+#message{
+    border: 2px solid #5BC0BE;
+    color: #5BC0BE;
+    background-color: rgba(91, 192, 190, 0.16);
+}
+
+.messageGrid{
+    display: grid;
+    grid-template-columns: 15% 65% 20%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+    'a b z'
+    'a c d';
+    place-items: center left;
+    height: 8vh;
+    margin: 2vh 0;
+}
+
+.messageGrid:hover{
+    transform: scale(1.01);
+    cursor: pointer;
+    background-color: #cccccc
+}
+
+.messagePfp{
+    grid-area: a;
+}
+
+.messageName{
+    grid-area: b;
+    font-size: 0.8rem;
+}
+
+.messagePreview{
+    grid-area: c;
+    font-size: 0.8rem;
+}
+
+.messageTime{
+    grid-area: d;
+    font-size: 0.5rem;
+}
+
+.requestGrid{
+    display: grid;
+    grid-template-columns: 15% 55% 5% 25%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+    'a b z e'
+    'a c d f';
+    place-items: center left;
+    height: 8vh;
+    margin: 2vh 0;
+}
+
+.requestPfp{
+    grid-area: a;
+}
+
+.requestName{
+    grid-area: b;
+    font-size: 0.8rem;
+}
+
+.requestPreview{
+    grid-area: c;
+    font-size: 0.8rem;
+}
+
+.requestTime{
+    grid-area: d;
+    font-size: 0.5rem;
+}
+
+.requestAccept{
+    grid-area: e;
+    background-color: #5BC0BE;
+}
+
+.requestDecline{
+    grid-area: f;
+}
+
+.requestAccept, .requestDecline{
+    padding: 0.1rem;
+    border: 1px solid black;
+    width: 20vw;
+    margin: 2vh;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+}
+
+.requestAccept:hover{
+    cursor: pointer;
+    background-color: #58a5a4;
+}
+
+.requestDecline:hover{
+    cursor: pointer;
+    background-color: #b8b8b8;
+}
+
+.eachPerson{
+    border: 2px solid #5BC0BE;
+    border-radius: 100%;
+    height: 8vh;
+    width: auto;
+    margin: 0 0.2rem;
+}
+
+#goBack{
+    text-decoration: none;
+}
+
+#headerIcon{
+    height: 1.5rem;
+    float: right;
+    margin: 1rem;
+}
+
+#headerIcon:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.mediumSize{
+    font-size: 1.5rem;
+}
+
+#peopleActive{
+    display: flex;
+    justify-content: left;
+    overflow-x: scroll;
+    padding: 1rem 0;
+}
+
+section{
+    margin: 3vh 0.8rem;
+}
+
+/* .scroll-container::-webkit-scrollbar {
+    display: none;
+  } */

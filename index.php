@@ -50,9 +50,9 @@ if ($loggedIn){
             include('templates/message.tpl.php');
             break;
 
-        case 'messageEach':
-            include('templates/messageEach.tpl.php');
-            break;
+        // case 'messageEach':
+        //     include('templates/messageEach.tpl.php');
+        //     break;
         
         case "search":
             include('templates/search.tpl.php');
