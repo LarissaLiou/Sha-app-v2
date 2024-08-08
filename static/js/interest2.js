@@ -8,7 +8,8 @@ function selectCategory2(){
         this.style.backgroundColor = 'white'
         selected2.splice(selected2.indexOf(this.innerHTML), 1)
     }
-    console.log(selected2)
+    skillsets = document.getElementById('selectedSkillset')
+    skillsets.value = JSON.stringify(selected2)
 }
 
 function initialise(){ /*initialise the selectCategory function to selectables and make them white to prevent errors in selectCategory */

@@ -6,7 +6,8 @@
     <link rel="stylesheet" type="text/css" href="static/css/connect.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
-    <script src = "static/js/connect.js" defer>  </script>
+    <script src = "static/js/default.js"></script>
+
 </head>
 <body>
     <h1>Connect</h1>
@@ -86,4 +87,6 @@
             </div>
         </div>
     </div>
+    <script src = "static/js/connect.js" defer>  </script>
+</body>
 </html>
