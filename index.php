@@ -1,9 +1,12 @@
 <?php
+require_once 'backend/Defaults/connect.inc.php';
+require_once 'backend/Defaults/utils.inc.php';
+require_once 'backend/Defaults/validate.inc.php';
 session_start();
 
 $filename = isset($_GET['filename']) ? $_GET['filename'] : "";
 
-$loggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true;
+$loggedIn = verify_login($mysqli);
 
 if ($loggedIn){
     switch($filename){
@@ -51,6 +54,10 @@ if ($loggedIn){
         //     include('templates/messageEach.tpl.php');
         //     break;
         
+        case "search":
+            include('templates/search.tpl.php');
+            break;
+
         default:
             include('templates/home.tpl.php');
     }

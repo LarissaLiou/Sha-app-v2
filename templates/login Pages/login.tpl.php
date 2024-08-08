@@ -6,8 +6,10 @@
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src = "login.js" defer>  </script>
+    
 </head>
 <body>
+    <?php require "backend/Login/googleLogin.php"?>
     <div class="container">
         <header>
             <h1>Sociate</h1>
@@ -27,7 +29,7 @@
             <div>
                 <p class = "text--small">Continue with</p>
                 <div class = "social-login-buttons">
-                    <button class="google"><img src="static/assets/google.png" alt="Google"></button>
+                    <a href = "<?= $googleUrl?>" style = "display:contents"><button class="google"><img src="static/assets/google.png" alt="Google"></button></a>
                     <button class="facebook"><img src="static/assets/facebook.png" alt="Facebook"></button>
                     <button class="apple"><img src="static/assets/apple.png" alt="Apple"></button>
                 </div>
@@ -38,11 +40,5 @@
     <footer>
         <p class = "text--small">Don't have an account? <a class = "signup" href="index.php?filename=signup">Sign Up</a></p>
     </footer>
-    <?php
-        if ($_SESSION['login_attempt'] == false && $_SESSION['error'] != ""){
-            echo "<script>alert('" . $_SESSION['error'] . "');</script>";
-            $_SESSION['login_attempt'] = true;
-        }
-    ?>
 </body>
 </html>
