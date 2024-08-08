@@ -2,7 +2,7 @@
 require_once __dir__."/../../vendor/autoload.php";
 require_once __dir__."/../Defaults/connect.inc.php";
 require_once __dir__."/../Defaults/validate.inc.php";
-
+require_once __dir__."/login_api.inc.php";
 require_once __dir__."/googleLoginInfo.inc.php";
 
 // Determine the origin
@@ -19,20 +19,7 @@ $client->addScope("openid");
 $googleUrl = $client->createAuthUrl();
 
 // Login function
-function onLogin($conn, $user) {
-    $_SESSION['userid'] = $user;
-    $token = GenerateRandomToken(128); // Generate a token, should be 128 - 256 bits
-    $tokenid = storeTokenForUser($conn, $user, $token);
-    $cookie = $user . ':' . $token . ':' . $tokenid;
-    $mac = hash_hmac('sha256', $cookie, SECRET_KEY); 
-    $cookie .= ':' . $mac;
-    setcookie('rememberme', $cookie, [
-        'expires' => time() + (10 * 365 * 24 * 60 * 60),
-        'path' => "/",
-        'secure' => true,
-        'httponly' => true
-    ]);
-}
+
 
 if (isset($_GET['code'])) {
     session_destroy();
@@ -44,7 +31,7 @@ if (isset($_GET['code'])) {
 
     $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
     if (isset($token["error"])) {
-        echo "<script>window.location.href = 'index.php?filename=login'</script>";
+        header("Location: /index.php?filename=login&error=Invalid login");
         exit();
     }
 
@@ -64,9 +51,12 @@ if (isset($_GET['code'])) {
             $id = $result['data'][0]['user_id'];
             onLogin($mysqli, $id);
             verify_login($mysqli);
-            // header("Location: /index.php?filename=home");
+            header("Location: index.php?filename=home");
         } else {
-            // Signup the user
+            $password = GenerateRandomToken(128);
+            $userId = onSignUp($mysqli, $name, $name, $email, $picture, $password);
+            onLogin($mysqli, $userId);
+            header("Location: index.php?filename=interest");
         }
     }
 }

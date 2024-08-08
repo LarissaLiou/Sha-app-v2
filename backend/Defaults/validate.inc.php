@@ -3,7 +3,6 @@ require_once __dir__.'/utils.inc.php';
 define("SECRET_KEY","uoqcy169(361");
 define("salt","vnljh19d1996v");
 define("CSRF_TOKEN_SECRET",'wxVy4t0EpypTDfPsEhqXfU92wsjnFce1bLMtbDyKWpbiVXGUp1D');
-define("FLAG_SALT","3Y_J2ACWccfmI8ve?(q_fkLl");
 
 function validateData($POST_GET, $filters, $validOptions, $presenceCheck,$jsonCheck = []){
     

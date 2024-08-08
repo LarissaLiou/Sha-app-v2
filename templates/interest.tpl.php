@@ -3,6 +3,7 @@
     <head>
         <title>Interest page</title>
         <link rel = "stylesheet" href = "static/css/interest.css">
+        <link rel = "stylesheet" href = "static/css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src = "static/js/interest.js"></script>
     </head>
@@ -13,7 +14,7 @@
             <p>If you were to solve a problem, what would the problem be about?</p>
         </section>
 
-        <form action = "backend/interest-end-point.php" method = "post" id = "interestSelection">
+        <form action = "backend/UserSetUp/interest-end-point.php" method = "post" id = "interestSelection">
             <div class = "grid">
                 <div class = 'grid-items grid2'>
                     <img src = 'static/assets/climateChange.png' alt = 'Climate Change'>
