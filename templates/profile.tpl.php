@@ -4,7 +4,9 @@
         <title>Profile page</title>
         <link rel = "stylesheet" href = "static/css/profile.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src = "static/js/default.js"></script>
         <script src = "static/js/profile.js"></script>
+        
     </head>
 
     <body>
@@ -29,7 +31,7 @@
                         <div id = "followiconbackground">
                             <img id = "followicon" src = "static/assets/followicon.png">
                         </div>
-                        <button id = "messagebutton">Message</button>
+                        <button id = "messagebutton" onclick = "sendMessageRequest(this)">Message</button>
                     </div>
                 </div>
             </div>

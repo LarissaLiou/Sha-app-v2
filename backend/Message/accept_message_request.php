@@ -29,8 +29,8 @@ $filterOptions = [
 $presenceCheck = ["request_id"];
 
 // Testing only
-$inputData = validateData(INPUT_GET, $filterOptions, [], $presenceCheck);
-// $inputData = validateData(INPUT_POST, $filterOptions, [], $presenceCheck);
+// $inputData = validateData(INPUT_GET, $filterOptions, [], $presenceCheck);
+$inputData = validateData(INPUT_POST, $filterOptions, [], $presenceCheck);
 
 verifyRequest($mysqli,$inputData['request_id'],$_SESSION['userid']);
 acceptMessageRequest($mysqli,$inputData['request_id']);
