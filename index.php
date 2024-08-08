@@ -26,8 +26,8 @@ if ($loggedIn){
             include('templates/interest.tpl.php');
             break;
 
-        case 'interest2':
-            include('templates/interest2.tpl.php');
+        case 'skillsets':
+            include('templates/skillsets.tpl.php');
             break;
 
         case 'profile':
@@ -57,7 +57,14 @@ if ($loggedIn){
         case "search":
             include('templates/search.tpl.php');
             break;
-
+        case "logout":
+            include('backend/Login/logout-end-point.php');
+        case "login":
+            include('templates/login Pages/login.tpl.php');
+            break;
+        case "signup":
+            include('templates/login Pages/signup.tpl.php');
+            break;
         default:
             include('templates/home.tpl.php');
     }

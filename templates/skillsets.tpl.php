@@ -3,6 +3,7 @@
     <head>
         <title>Interest page2</title>
         <link rel = "stylesheet" href = "static/css/interest.css">
+        <link rel = "stylesheet" href = "static/css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src = "static/js/interest2.js"></script>
     </head>
@@ -13,7 +14,7 @@
             <p>Moving on, what are some of your skill sets?</p>
         </section>
 
-        <form id = "interestSelection" class = "grid2" action = 'backend/skillset-end-point.php' method = 'post'>
+        <form id = "interestSelection" class = "grid2" action = 'backend/UserSetUp/skillset-end-point.php' method = 'post'>
 
             <div class = "interestGroup">
                 <span class = "interestHeader">Technology</span>

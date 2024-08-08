@@ -18,7 +18,7 @@
             <h2>Lorem ipsum dolor sit amet, consectetur</h2>
         </section>
         <main>
-            <form class = "login_form" action="backend/login-end-point.php" method="post">
+            <form class = "login_form" action="backend/Login/login-end-point.php" method="post">
                 <input class = "login-button" type="text" id="emailUsername" name="emailUsername" placeholder="Email/Username" aria-label="EmailUsername" required>
                 <input class = "login-button" type="password" id="password" name="password" placeholder="Password" aria-label="Password" required>
                 <button class = "login-button login-button--submit" type="submit">Login</button>
@@ -30,8 +30,8 @@
                 <p class = "text--small">Continue with</p>
                 <div class = "social-login-buttons">
                     <a href = "<?= $googleUrl?>" style = "display:contents"><button class="google"><img src="static/assets/google.png" alt="Google"></button></a>
-                    <button class="facebook"><img src="static/assets/facebook.png" alt="Facebook"></button>
-                    <button class="apple"><img src="static/assets/apple.png" alt="Apple"></button>
+                    <!-- <button class="facebook"><img src="static/assets/facebook.png" alt="Facebook"></button>
+                    <button class="apple"><img src="static/assets/apple.png" alt="Apple"></button> -->
                 </div>
             </div>
         </main>
@@ -40,5 +40,13 @@
     <footer>
         <p class = "text--small">Don't have an account? <a class = "signup" href="index.php?filename=signup">Sign Up</a></p>
     </footer>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const error = params.get('error');
+        if (error) {
+            alert(error);
+        }
+        
+    </script>
 </body>
 </html>
