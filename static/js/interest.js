@@ -10,7 +10,7 @@ function selectCategory(){
         selected.splice(selected.indexOf(this.getElementsByClassName('text')[0].innerHTML), 1)
     }
     interest = document.getElementById('selectedInterest')
-    interest.value = selected
+    interest.value = JSON.stringify(selected)
 }
 
 function initialise(){ /*initialise the selectCategory function to selectables and make them white to prevent errors in selectCategory */

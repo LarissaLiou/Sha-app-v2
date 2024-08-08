@@ -1,12 +1,12 @@
 h1{
-    font-size:2rem;
+    font-size:3rem;
     font-weight: 900;
     text-align: center;
     margin: 5vh;
 }
 
 h2{
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: center;
 }
 
@@ -56,13 +56,13 @@ main{
 }
 
 .login-button{
-    font-size: 0.7rem;
+    font-size: 1rem;
     padding: 0 0.8rem;
     border: 1px solid #0B132B;
     border-radius: 0.5em;
     width:100%;
-    height: 5vh;
     box-sizing: border-box;
+    padding:0.5em;
 }
 
 .forgot{
@@ -74,9 +74,12 @@ main{
 
 .login-button--submit{
     background:#5BC0BE;
+    font-size: 1.3em;
     border-radius: 1.5em;
     border:0;
     margin-top:0.5em;
+    padding:0.4em;
+    height:fit-content;
 }
 
 .or-divider {
@@ -107,12 +110,13 @@ a.signup{
 .social-login-buttons{
     display:grid;
     gap:0.5em;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     margin-top:0.5em;
 }
 
 .social-login-buttons>button{
-    height: 1.5rem;
+    height: 2rem;
+    padding:0.5em 0;
     border:none;
     border-radius: 0.3rem;
 }
@@ -130,12 +134,12 @@ a.signup{
 }
 
 img{
-    height: 1rem;
+    height: 100%;
     display: block;
     margin: auto;
 }
 
 .text--small{
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     position: relative;
 }
