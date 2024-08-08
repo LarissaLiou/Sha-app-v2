@@ -13,7 +13,7 @@ $filterOptions = [
 $presenceCheck = ["count"];
 
 $inputData = validateData(INPUT_GET, $filterOptions, [], $presenceCheck);
-$sql = "SELECT `users`.`user_id`,`age`,`interest`,`about`,`profile_picture`,`country`,`city` 
+$sql = "SELECT `users`.`user_id`,`age`,`interest`,`about`,`profile_picture`,`country`,`city`,`username` 
         FROM `users` 
         JOIN `user_details` ON `users`.`user_id` = `user_details`.`user_id`
         LEFT JOIN `users_interests_junction` ON `users`.`user_id` = `users_interests_junction`.`user_id`
@@ -22,5 +22,31 @@ $sql = "SELECT `users`.`user_id`,`age`,`interest`,`about`,`profile_picture`,`cou
         WHERE `users`.`user_id` != ? and `connections`.`user1_id` IS NULL and `connections`.`user2_id` IS NULL
         ORDER BY RAND() LIMIT ?";
 
-$recommendations = executeSelect($mysqli, $sql, "ii", [$_SESSION['userid'], $inputData['count']]);
-onSuccess($mysqli, $recommendations['data']);
+$recommendations = executeSelect($mysqli, $sql, "ii", [$_SESSION['userid'], $inputData['count']])['data'];
+$formattedRecommendations = [];
+
+foreach ($recommendations as $row) {
+    $userId = $row['user_id'];
+    if (!isset($formattedRecommendations[$userId])) {
+        $formattedRecommendations[$userId] = [
+            'user_id' => $row['user_id'],
+            'age' => $row['age'],
+            'about' => $row['about'],
+            'profile_picture' => $row['profile_picture'],
+            'country' => $row['country'],
+            'city' => $row['city'],
+            'username' => $row['username'],
+            'interests' => []
+        ];
+    }
+
+    if (!empty($row['interest'])) {
+        $hash = md5($row['interest']);
+        $color = "#" + substr($hash, 0, 6);
+        $formattedRecommendations[$userId]['interests'][] = ['interest'=>$row['interest'],'color'=>$colors];
+    }
+}
+
+$finalRecommendations = array_values($formattedRecommendations);
+
+onSuccess($mysqli, true, ["profiles"=>$finalRecommendations]);

@@ -1,15 +1,6 @@
-let events = document.getElementsByClassName('discoverimage');
-for (eventa of events){
-    eventa.addEventListener('mouseover', hover)
-    eventa.addEventListener('click', redirectEvent)
-}
+const interestContainer = document.querySelector('.interest');
+const nearbyContainer = document.querySelector('.near');
 
-function hover(){
-    this.style.cursor = "pointer";
+function setUp(){
+    
 }
-
-function redirectEvent(){
-    window.location.href = "index.php?filename=eventInformation"
-}
-
-console.log('hello')

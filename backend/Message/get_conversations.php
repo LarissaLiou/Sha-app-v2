@@ -11,9 +11,8 @@ $sql = "SELECT
   c.conversation_id as conversation_id,
   u.username as username,
     ud.profile_picture as profile_picture,
-    as last_message,
-    m.sent_at as last_message_date
-    m.last_message as last_message
+    m.sent_at as last_message_date,
+    m.content as last_message
 
 FROM
   conversations c
@@ -24,10 +23,10 @@ JOIN
                          END
 JOIN
     user_details ud ON ud.user_id = u.user_id
-JOIN
+LEFT JOIN
   (SELECT 
     content,
-    MAX(sent_at),
+    MAX(sent_at) as sent_at,
     conversation_id
     FROM
     messages
@@ -35,6 +34,6 @@ JOIN
 WHERE
   c.user1_id = ? OR c.user2_id = ?
 ";
-$conversations = executeSelect($mysqli, $sql, "ii", [$userId, $userId]);
-onSuccess($mysqli, $conversations);
+$conversations = executeSelect($mysqli, $sql, "iiii", [$userId, $userId,$userId,$userId]);
+onSuccess($mysqli, true,["conversations"=>$conversations['data']]);
 

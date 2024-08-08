@@ -32,5 +32,5 @@ $inputData = validateData(INPUT_POST, $filterOptions, [], $presenceCheck);
 
 checkUserInConversation($mysqli,$inputData['conversation_id'],$_SESSION['userid']);
 sendMessage($mysqli,$inputData['conversation_id'],$inputData['content']);
-onSuccess($mysqli,true);
+onSuccess($mysqli,true,["last_updated"=>time()]);
 
