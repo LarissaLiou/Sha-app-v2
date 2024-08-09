@@ -14,6 +14,6 @@ if (!verify_login($mysqli)){
 }
 
 $inputData = validateData(INPUT_POST, $filters, [], $presenceCheck);
-$sql = "UPDATE `users_details` SET `about` = ? WHERE `user_id` = ?";
+$sql = "UPDATE `user_details` SET `about` = ? WHERE `user_id` = ?";
 executeInsert($mysqli, $sql, "si", [$inputData['about'], $_SESSION['userid']]);
 onSuccess($mysqli,"Profile Updated");

@@ -3,6 +3,7 @@ require_once __dir__."/../Defaults/connect.inc.php";
 require_once __dir__."/../Defaults/utils.inc.php";
 require_once __dir__."/../Defaults/validate.inc.php";
 
+
 if (!verify_login($mysqli)){
     onError($mysqli,"Unauthorized");
 }
@@ -41,9 +42,7 @@ foreach ($recommendations as $row) {
     }
 
     if (!empty($row['interest'])) {
-        $hash = md5($row['interest']);
-        $color = "#" + substr($hash, 0, 6);
-        $formattedRecommendations[$userId]['interests'][] = ['interest'=>$row['interest'],'color'=>$colors];
+        $formattedRecommendations[$userId]['interests'][] = ['interest'=>$row['interest'],'color'=>generateColor($row['interest'])];
     }
 }
 

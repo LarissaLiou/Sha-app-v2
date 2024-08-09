@@ -26,8 +26,7 @@ $username = $_SESSION['username'];
 $result = executeInsert($mysqli, $sql, "iis", [$inputData['user_id'], $_SESSION['userid'], $username." Sent you a connection request"]);
 $notification_id = $result['insertedId'];
 
-$sql = "INSERT IGNORE INTO `connection_requests` (`user1_id`, `user2_id`, `notification_id`) VALUES (?, ? , ?)";
+$sql = "INSERT INTO `connection_requests` (`user1_id`, `user2_id`, `notification_id`) VALUES (?, ? , ?)";
 $result = executeInsert($mysqli, $sql, "iii", [$_SESSION['userid'], $inputData['user_id'], $notification_id]);
-
 
 onSuccess($mysqli,true);

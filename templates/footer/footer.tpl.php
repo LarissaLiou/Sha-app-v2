@@ -15,8 +15,8 @@
                 <img class = "icons" src = "static/assets/peopleicon.png">
             </a>
 
-            <a>
-            <img class = "icons" src = "static/assets/searchicon.png">
+            <a href = "index.php?filename=search">
+            <img class = "icons" src = "static/assets/searchicon.svg">
             </a>
 
             <a href = "index.php?filename=profile">

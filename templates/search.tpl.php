@@ -3,6 +3,7 @@
     <head>
         <title>Profile page</title>
         <link rel = "stylesheet" href = "static/css/search.css">
+        <link rel = "stylesheet" href = "static/css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src = "static/js/default.js"></script>
     </head>

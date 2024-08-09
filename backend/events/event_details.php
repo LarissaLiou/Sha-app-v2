@@ -12,29 +12,28 @@ $filterOptions = [
 $presenceCheck = ["event_id"];
 
 $eventId = $_GET['event_id'] ?? 0;
-$sql1 = "SELECT `event_id`, `event_name`, `event_image`, `min_price`, 
+$sql = "SELECT `events`.`event_id`, `event_name`, `event_image`, `min_price`, 
                CASE WHEN `max_price` = 0 THEN `min_price` ELSE `max_price` END as `max_price`,
                `min_attendees`, 
                CASE WHEN `max_attendees` = 0 THEN `min_attendees` ELSE `max_attendees` END as `max_attendees`,
-               `description`, `location`, `start`, `end`
-        FROM `notifications` 
-        WHERE `event_id` = ?";
+               `location`, `start`, `end`, `event_type`,
+                `description`, `event_link`,`location`
+        FROM `events`
+        LEFT JOIN `events_types_junction` ON `events`.`event_id` = `events_types_junction`.`event_id`
+        LEFT JOIN `event_types` ON `events_types_junction`.`event_type_id` = `event_types`.`event_type_id`
+        WHERE `events`.`event_id` = ?
+        ";
 
-$result1 = executeSelect($mysqli, $sql1, "i", [$eventId]);
+$result = executeSelect($mysqli, $sql, "i", [$eventId]);
+if ($result['num_rows'] == 0){
+    onError($mysqli, "No event found");
+}
 
-// Second query to fetch event type details
-$sql2 = "SELECT `event_type_id`, `event_type` 
-        FROM `event_types`
-        WHERE `event_type_id` = ?";
+$response = $result['data'][0];
+$response['event_type'] = [];
+foreach ($result['data'] as $row){
+    $response['event_type'][] = $row['event_type'];
+}
 
-$result2 = executeSelect($mysqli, $sql2, "i", [$eventTypeId]);
 
-// Combine the results
-$response = [
-    'event_details' => $result1['data'],
-    'event_type_details' => $result2['data']
-];
-
-onSuccess($mysqli, true, ['requests' => $response]);
-
-$mysqli->close();
+onSuccess($mysqli, true, ['event' => $response]);

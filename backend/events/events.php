@@ -9,33 +9,27 @@ if (!verify_login($mysqli)) {
 
 $presenceCheck = ["recommended", "near me", "interest"];
 
-$eventId = $_GET['event_id'] ?? 0;
-$eventTypeId = $_GET['event_type_id'] ?? 0;
-
 // First query to fetch event details
-$sql1 = "SELECT `event_id`, `event_name`, `event_image`, `min_price`, 
+$sql = "SELECT `events`.`event_id`, `event_name`, `event_image`, `min_price`, 
                CASE WHEN `max_price` = 0 THEN `min_price` ELSE `max_price` END as `max_price`,
                `min_attendees`, 
                CASE WHEN `max_attendees` = 0 THEN `min_attendees` ELSE `max_attendees` END as `max_attendees`,
-               `location`, `start`, `end`
-        FROM `events` 
-        WHERE `event_id` = ?";
+               `location`, `start`, `end`, `event_type`
+        FROM `events`
+        LEFT JOIN `events_types_junction` ON `events`.`event_id` = `events_types_junction`.`event_id`
+        LEFT JOIN `event_types` ON `events_types_junction`.`event_type_id` = `event_types`.`event_type_id`
+        ";
 
-$result1 = executeSelect($mysqli, $sql1, "i", [$eventId]);
+$result = executeSelect($mysqli, $sql, "", []);
+$newData = [];
+foreach ($result['data'] as $row){
+    if (!isset($newData[$row['event_id']])) {
+        $newData[$row['event_id']] = $row;
+        $newData[$row['event_id']]['event_type'] = [];
+    }
+    $newData[$row['event_id']]['event_type'][] = $row['event_type'];
+}
+$response = array_values($newData);
+onSuccess($mysqli, true, ['events' => $response]);
 
-// Second query to fetch event type details
-$sql2 = "SELECT `event_type_id`, `event_type` 
-        FROM `event_types`
-        WHERE `event_type_id` = ?";
 
-$result2 = executeSelect($mysqli, $sql2, "i", [$eventTypeId]);
-
-// Combine the results
-$response = [
-    'event_details' => $result1['data'],
-    'event_type_details' => $result2['data']
-];
-
-onSuccess($mysqli, true, ['requests' => $response]);
-
-$mysqli->close();
