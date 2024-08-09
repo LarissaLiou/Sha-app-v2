@@ -3,6 +3,7 @@
     <head>
         <title>Profile page</title>
         <link rel = "stylesheet" href = "static/css/profile.css">
+        <link rel = "stylesheet" href = "static/css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src = "static/js/default.js"></script>
         <script src = "static/js/profile.js"></script>
@@ -13,7 +14,7 @@
         <section id = "followers">
             <a href = "index.php?filename=home" id = "goBack"><span class = "mediumSize">🡰</span></a>&nbsp;&nbsp;&nbsp;
             <h1 class = "bold">Profile</h1>
-            <a href = 'index.php?filename=logout'><button id = 'logout' href = >Log out</button></a></div>
+            <a href = 'index.php?filename=logout' id = "logout_button"><button id = 'logout' href = >Log out</button></a></div>
             <br>
 
             <div class = "grid1">
@@ -21,14 +22,14 @@
 
                 <div class = "grid2">
                     <div class = "gridfollowers">
-                        <div class = "center bold">99</div>
-                        <div class = "center bold">8</div>
-                        <div class = "smalltext center">Connections</div>
-                        <div class = "smalltext center">Experience</div>
+                        <div class = "center mediumtext bold" id = "connection_count">99</div>
+                        <!-- <div class = "center bold">8</div> -->
+                        <div class = "mediumtext center">Connections</div>
+                        <!-- <div class = "smalltext center">Experience</div> -->
                     </div>
 
                     <div class = "gridicons">
-                        <div id = "followiconbackground">
+                        <div id = "followiconbackground" onclick = "sendConnectionRequest(this)">
                             <img id = "followicon" src = "static/assets/followicon.png">
                         </div>
                         <button id = "messagebutton" onclick = "sendMessageRequest(this)">Message</button>
@@ -44,9 +45,9 @@
                 <span id = "personTag" class = "grey">@Shanice1234</span> <!-- for backend: replace with tag from database-->
             </div>
 
-            <div id = "personBackground" class = "grey"><span id = "personOccupation" class = "grey">Student</span> at <span id = "personSchool" class = "grey">River Valley High School</span></div> <!-- for backend: replace with background, occupation, school from database-->
+            <!-- <div id = "personBackground" class = "grey"><span id = "personOccupation" class = "grey">Student</span> at <span id = "personSchool" class = "grey">River Valley High School</span></div> for backend: replace with background, occupation, school from database -->
             
-            <div id = "personFrom" class = "grey">Founder-in-Residence, YFS 2023</div> <!-- for backend: replace with where the person from from database-->
+            <!-- <div id = "personFrom" class = "grey">Founder-in-Residence, YFS 2023</div> for backend: replace with where the person from from database -->
 
             <div id = "personOrigin">
                 <span id = "personCountry" class = "grey">Singapore</span><span class = "grey">, </span> <!-- for backend: replace with country from database-->
@@ -58,8 +59,8 @@
 
         <section id = "aboutme" class = "box">
             <div class = "bold titles">About Me</div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Ut enim ad minim </div> <!-- for backend: replace with  from database-->
+            <textarea id = "about_input" disabled placeholder="Tell us about yourself..."></textarea>
+            <button id = "edit_about" class = "hidden default_button" onclick = "editAbout(this)" contenteditable = "false">Edit</button>
         </section>
 
 
@@ -67,17 +68,14 @@
             <div id = "interestsTitle" class = "bold titles">Interests</div>
             <!-- not sure how the colours are determined: random, based on category or based on database? So Imma assume it is database for now and put a fixed value-->
             <!-- for backend: replace all interests with database-->
-            <span class = "interestBlocks background1 white">Sustainability</span>
-            <span class = "interestBlocks background2 white">Sustainability</span>
-            <span class = "interestBlocks background3 white">Softball</span>
-            <span class = "interestBlocks background4 white">Technology</span>
+             <div id = "interests_container">
+            </div>
         </section>
 
         
-        <section id = "highlights" class = "box">
+        <!-- <section id = "highlights" class = "box">
             <div id = "highlightsTitle" class = "bold titles">Highlights</div>
             <div class = "grid3">
-                <!-- for backend: replace all highlights with database-->
                 <img class = "highlightsImage square" src = "static/assets/pfp.jpeg">
                 <img class = "highlightsImage square" src = "static/assets/pfp.jpeg">
                 <img class = "highlightsImage square" src = "static/assets/pfp.jpeg">
@@ -92,7 +90,6 @@
 
                 <img src = "static/assets/pfp.jpeg" class = "round paddingpls">
                 <div class = "grid2 paddingpls">
-                    <!-- for backend: replace these details with database-->
                     <div class = "bold">Founder-in-Residence</div>
                     <div class = "grey">Young Founders Summit</div>
                     <div class = "grey">December 2024 - Current</div>
@@ -118,14 +115,13 @@
         <section id = "contactDetails" class = "box">
             <div id = "contactDetailsTitle" class = "bold titles">Contact Details</div>
             <div id = "contactDetailsBoxes" class = "flex">
-                <!-- for backend: replace all contact detail images with backend-->
                 <img src = "static/assets/pfp.jpeg" class = "contactDetailsImages square">
                 <img src = "static/assets/pfp.jpeg" class = "contactDetailsImages square">
                 <img src = "static/assets/pfp.jpeg" class = "contactDetailsImages square">
                 <img src = "static/assets/pfp.jpeg" class = "contactDetailsImages square">
                 <img src = "static/assets/pfp.jpeg" class = "contactDetailsImages square">
             </div>
-        </section>
+        </section> -->
 
     </body>
 </html>

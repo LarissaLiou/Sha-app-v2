@@ -8,7 +8,9 @@ $filename = isset($_GET['filename']) ? $_GET['filename'] : "";
 
 $loggedIn = verify_login($mysqli);
 
+
 if ($loggedIn){
+    $userData = getUserData($mysqli,$_SESSION['userid']);
     switch($filename){
         // case 'login':
         //     include('templates/login Pages/login.tpl.php');

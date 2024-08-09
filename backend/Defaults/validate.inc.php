@@ -141,6 +141,13 @@ function verify_login($conn){
     };
 }
 
+function getUserData($conn,$user_id){
+    $sql = "SELECT * FROM `users`
+            LEFT JOIN `user_details` ON `users`.`user_id` = `user_details`.`user_id`
+            WHERE `users`.`user_id` = ?";
+    $result = executeSelect($conn,$sql,"i",[$user_id]);
+    return $result['data'][0];
+}
 function error($error, $code = 400){
     http_response_code($code);
     echo json_encode(["error"=>$error]);

@@ -14,7 +14,8 @@ function setUpInterests(container,interests){
 function setCard(container,profileNum){
   profileNum = (profileNum+profileData.length) % profileData.length
   console.log(profileNum)
-  profile = profileData[profileNum]
+  const profile = profileData[profileNum]
+
   container.querySelector(".profile-img").src = profile.profile_picture
   container.querySelector(".profile-img").onerror = () => {
     container.querySelector(".profile-img").src = "static/assets/default.png"
@@ -22,8 +23,11 @@ function setCard(container,profileNum){
   container.querySelector(".name").textContent = profile.username
   container.querySelector(".location").textContent = profile.location
   container.querySelector(".about").textContent = profile.about
-  container.querySelector(".view").onclick = () => {
-    window.location.href = `index.php?filename=${profile.user_id}`
+  console.log(profile)
+  container.querySelector(".view").onclick = function(){
+    const user_id = profile.user_id
+    window.open(`index.php?filename=profile&user_id=${user_id}`,"_blank")
+
   }
   container.querySelector(".connect").onclick = async function(){
     console.log(profile.user_id)
@@ -42,9 +46,9 @@ function setCard(container,profileNum){
 }
 
 function setUpAllCards(currentProfile){
-  setCard(containers[0],currentProfile-1)
-  setCard(containers[1],currentProfile)
-  setCard(containers[2],currentProfile+1)
+  setCard(document.body.querySelector(".before"),currentProfile-1)
+  setCard(document.body.querySelector(".current"),currentProfile)
+  setCard(document.body.querySelector(".after"),currentProfile+1)
 }
 async function setUp(){
   const {profiles} = await getRequest("backend/Connect/recommendations.php",{"count":100})

@@ -13,3 +13,8 @@ function onSuccess($conn,$success,$additionalData = []){
     mysqli_close($conn);
     exit();
 }
+
+function generateColor($interest){
+    $hash = md5($interest);
+    return "#" . substr($hash, 0, 6);
+}   

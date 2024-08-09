@@ -4,6 +4,7 @@
         <title>Notification</title>
         <link rel = "stylesheet" href = "static/css/notification.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src = 'static/js/default.js'></script>
     </head>
 
     <body>
@@ -12,8 +13,10 @@
                 <a href = "index.php?filename=home" id = "goBack"><span class = "mediumSize">🡰</span></a>&nbsp;&nbsp;&nbsp;
                 <h1>Notifications</h1>
             </div>
+            <div id = "notifications">
 
-            <div>
+            </div>
+            <!-- <div>
                 <h2>Today</h2>
                 <div class = "notifGridConnect">
                     <img src = "static/assets/pfp2.jpeg" class = "notifpfp grid-items">
@@ -49,8 +52,9 @@
                     <p class = "notifDescription grid-items"><span class = "name">10 people</span> checked your profile.</p>
                     <p class = "notifTime grid-items">2w ago</p>
                 </div>
-            </div>
+            </div> -->
 
         </section>
+        <script src = 'static/js/notifications.js'></script>
     </body>
 </html>

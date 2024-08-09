@@ -75,3 +75,7 @@ section{
 h2{
     margin:0.2em 0 !important;
 }
+
+.eventName{
+    font-weight:bold;
+}

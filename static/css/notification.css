@@ -62,12 +62,13 @@ h2{
 .notifGridConnect{
     display: grid;
     grid-template-columns: 15% 65% 20%;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 100%;
     grid-template-areas:
-    'a b d'
-    'a c d';
+    'a b d';
+    /* 'a c d'; */
     height: 8vh;
     width: 85vw;
+    gap:1em;
     place-items: center left;
 }
 

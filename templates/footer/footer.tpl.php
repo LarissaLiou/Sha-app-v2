@@ -15,12 +15,12 @@
                 <img class = "icons" src = "static/assets/peopleicon.png">
             </a>
 
-            <a>
-            <img class = "icons" src = "static/assets/searchicon.png">
+            <a href = "index.php?filename=search">
+            <img class = "icons" src = "static/assets/searchicon.svg">
             </a>
 
             <a href = "index.php?filename=profile">
-                <img class = "icons round" src = "static/assets/pfpicon.jpg"> <!-- for backend: replace with database-->
+                <img class = "icons round" src = "<?= htmlspecialchars($userData['profile_picture'])?>">
             </a>
         </section>
     </body>

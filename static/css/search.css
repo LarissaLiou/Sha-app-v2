@@ -1,7 +1,7 @@
 body{
     margin:0;
     width:100vw;
-    padding:0 1em;
+    padding:1em 1em !important;
     box-sizing: border-box;
 }
 #searchicon{
@@ -16,7 +16,12 @@ body{
     box-sizing: border-box;
     aspect-ratio: 1/1;
 }
-
+section{
+    margin:1em 0
+}
+h1,h2,h3{
+    margin: 0.5em 0 !important;
+}
 #searchbar{
     width:100%;
     height:2em;
