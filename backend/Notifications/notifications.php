@@ -16,7 +16,7 @@ $sql = "SELECT `notification_type`,`content`,`sender_id`,`created_at`,`user_id` 
         JOIN `users` ON `sender_id` = `user_id` 
         WHERE `recipient_id` = ?";
 
-$result = executeSelect($mysqli, $sql, "i", [$userId]);
-onSuccess($mysqli,true,['requests'=>$result['data']]);
+$notifData = executeSelect($mysqli, $sql, "i", [$userId]);
+onSuccess($mysqli,true,['requests'=>$notifData['data']]);
 header('Content-Type: application/json');
-echo json_encode(['requests' => $result['data']]);
+echo json_encode(['requests' => $notifData['data']]);
