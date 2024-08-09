@@ -20,7 +20,7 @@
             </a>
 
             <a href = "index.php?filename=profile">
-                <img class = "icons round" src = "static/assets/pfpicon.jpg"> <!-- for backend: replace with database-->
+                <img class = "icons round" src = "<?= htmlspecialchars($userData['profile_picture'])?>">
             </a>
         </section>
     </body>

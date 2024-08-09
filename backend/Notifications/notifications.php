@@ -12,11 +12,11 @@ $filterOptions = [
 ];
 $userId = $_SESSION['userid'];
 
-$sql = "SELECT `notification_type`,`content`,`sender_id`,`created_at`,`user_id` FROM `notifications` 
-        JOIN `users` ON `sender_id` = `user_id` 
-        WHERE `recipient_id` = ?";
+$sql = "SELECT `notification_id`,`notification_type`,`content`,`sender_id`,`notifications`.`created_at`,`content`
+        FROM `notifications` 
+        LEFT JOIN `users` ON `sender_id` = `users`.`user_id` 
+        LEFT JOIN `user_details` ON `users`.`user_id` = `user_details`.`user_id`
+        WHERE `notifications`.`user_id` = ?";
 
 $notifData = executeSelect($mysqli, $sql, "i", [$userId]);
-onSuccess($mysqli,true,['requests'=>$notifData['data']]);
-header('Content-Type: application/json');
-echo json_encode(['requests' => $notifData['data']]);
+onSuccess($mysqli,true,['notifications'=>$notifData['data']]);
