@@ -1,9 +1,9 @@
 const notifications_container = document.querySelector("#notifications");
 
-function insertNotification(userData) {
+function insertNotification(notifData) {
     const notification = document.createElement("div");
-    for (const key in userData) {
-        notification.dataset[key] = JSON.stringify(userData[key]);
+    for (const key in notifData) {
+        notification.dataset[key] = JSON.stringify(notifData[key]);
     }
     notification.classList.add("notification");
 
@@ -14,17 +14,29 @@ function insertNotification(userData) {
     };
     notification.appendChild(img);
 
+    const username = document.createElement("h2");
+    username.classList.add("sender_id");
+    username.textContent = notifData.username;
+    notification.appendChild(username); // Append the username to the notification
+
+    const notificationTextMap = {
+        0: "Someone liked your post",
+        1: "Someone commented on your post",
+        2: "You have a new connection request",
+        3: "You were mentioned in a post",
+        4: "Someone checked out your profile",
+        5: "You might be interested in this"
+    };
+    const notifType = notifData.notification_type;
     const title = document.createElement("h3");
-    title.classList.add("notification_title");
-    title.textContent = userData.notification_title;
+    title.classList.add("notification_type");
+    title.textContent = notificationTextMap[notifType] || "Unknown notification type";
     notification.appendChild(title);
 
-    const content = document.createElement("p");
-    content.classList.add("content");
-    content.textContent = userData.content;
-    notification.appendChild(content);
-
-    //const 
+    const notif_time = document.createElement("h4"); // Correct the typo here
+    notif_time.classList.add("created_at");
+    notif_time.textContent = notifData.time;
+    notification.appendChild(notif_time); // Append the time to the notification
 
     notifications_container.appendChild(notification);
 }
