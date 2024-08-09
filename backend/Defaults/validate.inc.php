@@ -1,8 +1,6 @@
 <?php
 require_once __dir__.'/utils.inc.php';
-define("SECRET_KEY","uoqcy169(361");
-define("salt","vnljh19d1996v");
-define("CSRF_TOKEN_SECRET",'wxVy4t0EpypTDfPsEhqXfU92wsjnFce1bLMtbDyKWpbiVXGUp1D');
+require_once __DIR__."/../../../private/sociate_passwords.inc.php";
 
 function validateData($POST_GET, $filters, $validOptions, $presenceCheck,$jsonCheck = []){
     
