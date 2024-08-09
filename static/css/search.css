@@ -71,6 +71,10 @@ h1,h2,h3{
     flex-shrink:0;
 }
 
+.event:hover, .profile:hover{
+    filter: brightness(0.8);
+    backdrop-filter: brightness(0.8);
+}
 .event::before{
     content: "";
     display: block;
@@ -104,6 +108,7 @@ h1,h2,h3{
     width:5em;
     flex-shrink:0;
 }
+
 
 .profile>*{
     margin:0;

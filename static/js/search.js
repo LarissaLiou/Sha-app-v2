@@ -18,6 +18,9 @@ function insertEvent(eventData){
     title.classList.add("event_name")
     title.textContent = eventData.event_name
     event.appendChild(title)
+    event.onclick = function(){
+        window.open(`index.php?filename=event&event_id=${eventData.event_id}`,"_blank")
+    }
     event_container.appendChild(event)
 }
 
@@ -42,6 +45,9 @@ function insertUser(userData){
     handle.classList.add("profile_handle")
     handle.textContent = userData.user_handle
     profile.appendChild(handle)
+    profile.onclick = function(){
+        window.open(`index.php?filename=profile&user_id=${userData.user_id}`,"_blank")
+    }
     profiles_container.appendChild(profile)
 }
 async function setUp(){
