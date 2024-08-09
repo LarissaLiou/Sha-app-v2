@@ -16,7 +16,7 @@
             </a>
 
             <a href = "index.php?filename=search">
-            <img class = "icons" src = "static/assets/searchicon.svg">
+            <img class = "icons" src = "static/assets/searchIcon.svg">
             </a>
 
             <a href = "index.php?filename=profile">

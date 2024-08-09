@@ -1,7 +1,7 @@
 <?php
-require_once 'backend/Defaults/connect.inc.php';
-require_once 'backend/Defaults/utils.inc.php';
-require_once 'backend/Defaults/validate.inc.php';
+require_once __dir__.'/backend/Defaults/connect.inc.php';
+require_once __dir__.'/backend/Defaults/utils.inc.php';
+require_once __dir__.'/backend/Defaults/validate.inc.php';
 session_start();
 
 $filename = isset($_GET['filename']) ? $_GET['filename'] : "";
