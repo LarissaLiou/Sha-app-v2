@@ -1,5 +1,6 @@
 
 async function postRequest(destination,data,action,secure,reportError){
+    destination = destination +"?"+Date.now()
     let formObject = new FormData()
     secure = secure ?? false
     data = data ?? {} 
@@ -38,6 +39,7 @@ async function postRequest(destination,data,action,secure,reportError){
 async function getRequest(destination,data,action,secure){
     secure = secure ?? false;
     data = data ?? {} 
+    data["time"] = Date.now()
     destination += "?"
     if (secure){
         var csrfMetaTag = document.querySelector('meta[name="csrf_token"]')

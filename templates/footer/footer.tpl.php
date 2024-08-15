@@ -19,8 +19,8 @@
             <img class = "icons" src = "static/assets/searchIcon.svg">
             </a>
 
-            <a href = "index.php?filename=profile">
-                <img class = "icons round" src = "<?= htmlspecialchars($userData['profile_picture'])?>">
+            <a href = "index.php?filename=profile&user_id=<?= htmlspecialchars($_SESSION['userid'])?>">
+                <img class = "icons round" src = "<?= htmlspecialchars($userData['profile_picture'])?>" onerror = "this.src = 'static/assets/default.png'">
             </a>
         </section>
     </body>

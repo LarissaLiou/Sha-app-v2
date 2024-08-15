@@ -24,6 +24,7 @@ try:
     
     
     print("You're connected to the database:", record)
+    
 
 except mysql.connector.Error as err:
     print("Error:", err)

@@ -4,6 +4,7 @@ $mysqli = new mysqli(SERVERNAME,DB_USER,DB_PASS,DB_NAME);
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 }
+
 function executeInsert($mysqli, $sql, $types, $params, $exitOnError = false)
 {
     // Prepare the SQL statement
