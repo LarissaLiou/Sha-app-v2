@@ -62,7 +62,7 @@
                 </div>
             </div>
 
-            <input id = "selectedSkillset" name = "selectedSkillset" hidden>
+            <input id = "selectedSkillset" name = "selectedSkillset" value = "[]" hidden>
 
             <button type = "submit">That's all!</button>
             <button onclick = "removeAll()" type = "submit">I don't really know yet...</button>

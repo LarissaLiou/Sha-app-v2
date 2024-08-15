@@ -87,7 +87,7 @@
                 </div>
             </div>
 
-            <input id = "selectedInterest" name = "selectedInterest" hidden>
+            <input id = "selectedInterest" name = "selectedInterest" value = "[]" hidden>
 
             <button type = "submit">That's all!</button>
             <button onclick = "removeAll()" type = "submit">I don't really know yet...</button>
