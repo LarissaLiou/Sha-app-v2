@@ -38,7 +38,7 @@ h3{
     --currentness:1;
     --offset:5vw;
 }
-.container{
+.connect-container{
     --shift:0px;
     opacity:var(--currentness);
     filter: blur(calc((1 - var(--currentness)) * 0.5 * 10px));
@@ -49,7 +49,7 @@ h3{
     bottom: 10vh;
     display:flex;
     row-gap: 0.75em;
-    background: #3A1318;
+    background: #541166;
     color:white;
     width:90vw;
     height:80vh;
@@ -62,7 +62,7 @@ h3{
     overflow: scroll;
 }
 .age{
-    color:#5BC0BE;
+    color:#FBBF3B;
 }
 .location{
     color:grey;
@@ -86,14 +86,14 @@ section{
     gap:0.25em;
 }
 
-.interest-container{
+.interest-connect-container{
     display:flex;
     flex-wrap: wrap;
     gap:0.5em;
 }
 
 .interest-blue{
-    background-color:#5BC0BE
+    background-color:#FBBF3B
 }
 
 .interest-pink{
@@ -141,12 +141,12 @@ section{
 }
 
 .connect{
-    background:#5BC0BE;
+    background:#FBBF3B;
     color:white;
 }
 
 .see_more{
-    color:#5BC0BE
+    color:#FBBF3B
 }
 
 .gallery{

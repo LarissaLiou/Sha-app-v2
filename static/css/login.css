@@ -73,7 +73,7 @@ main{
 }
 
 .login-button--submit{
-    background:#5BC0BE;
+    background:#FBBF3B;
     font-size: 1.3em;
     border-radius: 1.5em;
     border:0;
@@ -103,7 +103,7 @@ main{
 }
 
 a.signup{
-    color: #5BC0BE;
+    color: #FBBF3B;
     text-decoration: none;
 }
 

@@ -8,7 +8,7 @@
     </head>
 
     <body>
-        <section>
+        <section class = "container">
             <div id = "header">
                 <a href = "index.php?filename=home" id = "goBack"><span class = "mediumSize">🡰</span></a>
                 <a href = "index.php?filename=notification"><img class = "headerIcons" src = 'static/assets/notificationIcon.png'></a>

@@ -16,8 +16,8 @@ body{
 }
 
 #message{
-    border: 2px solid #5BC0BE;
-    color: #5BC0BE;
+    border: 2px solid #FBBF3B;
+    color: #FBBF3B;
     background-color: rgba(91, 192, 190, 0.16);
 }
 
@@ -95,7 +95,7 @@ body{
 
 .requestAccept{
     grid-area: e;
-    background-color: #5BC0BE;
+    background-color: #FBBF3B;
 }
 
 .requestDecline{
@@ -121,7 +121,7 @@ body{
 }
 
 .eachPerson{
-    border: 2px solid #5BC0BE;
+    border: 2px solid #FBBF3B;
     border-radius: 100%;
     width: 100%;
     box-sizing: border-box;
