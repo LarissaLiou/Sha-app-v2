@@ -9,6 +9,7 @@
     </head>
 
     <body>
+        <div class="container">
         <h1>Find</h1>
         <div id = "searchbar">
             <input type = "text" id = "search" placeholder = "Search Sociate">
@@ -35,7 +36,7 @@
                 </section>
             </section>
         </section>
-
+        </div>
 
         <script src = "static/js/search.js"></script>
     </body>

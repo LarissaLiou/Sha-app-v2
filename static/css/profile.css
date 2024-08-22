@@ -43,7 +43,7 @@ button:hover{
 }
 
 .background1{
-    background-color: #5BC0BE;
+    background-color: #FBBF3B;
 }
 
 .background2{
@@ -79,7 +79,7 @@ button:hover{
     width:fit-content;
     padding:0.2em 0.5em;
     border-radius: 40%;
-    background-color: #5BC0BE;
+    background-color: #FBBF3B;
     margin-left: 1rem;
 }
 
@@ -230,7 +230,7 @@ h1{
     width: 20vw;
     height: auto;
     border: 2px solid white;
-    outline: 2px solid #5BC0BE;
+    outline: 2px solid #FBBF3B;
     border-radius: 100%;
 }
 

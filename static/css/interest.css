@@ -6,6 +6,7 @@ body{
 button{
     background-color: white;
     border: 0px solid black;
+    color:black;
     width: 80vw;
     display: block;
     margin: 3vh auto;
@@ -95,7 +96,7 @@ img{
 }
 
 #interestSelection{
-    background-color: #5CB0BE;
+    background-color: #FBBF3B;
 }
 
 section{
@@ -104,7 +105,7 @@ section{
 }
 
 #submitSection{
-    background-color: #5CB0BE;
+    background-color: #FBBF3B;
 }
 
 .text{

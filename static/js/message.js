@@ -10,8 +10,8 @@ function switchTab(){
         }   
     }
 
-    this.style.border = '2px solid #5BC0BE'
-    this.style.color = '#5BC0BE'
+    this.style.border = '2px solid #FBBF3B'
+    this.style.color = '#FBBF3B'
     this.style.backgroundColor = 'rgba(91, 192, 190, 0.16)'
 
     if (this.id == "message"){

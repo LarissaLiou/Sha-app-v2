@@ -7,6 +7,7 @@
         <script src = "static/js/default.js"></script>
     </head>
     <body>
+        <div class = "container">
         <nav class = "message_nav">
             <a href = "index.php?filename=message">
                 <img class = "back" src = "static/assets/back.png" alt = "back"></a>
@@ -19,6 +20,7 @@
         <div class = "message_box">
             <input type = "text" class = "message_input" placeholder = "Type a message">
             <input class = "send" type = "image" src = "static/assets/send.png">
+        </div>
         </div>
         <script src = "static/js/messageEach.js"></script>
     </body>
