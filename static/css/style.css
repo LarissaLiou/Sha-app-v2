@@ -24,9 +24,26 @@ h1{
     padding:0.2em 0.5em;
     font-size: 1em;
     border:none;
-    background:#5BC0BE;
+    background:#FBBF3B;
 }
 
 .hidden{
     display:none;
+}
+
+@media (min-width: 992px) {
+    .container{
+       width: 34%;
+       padding: 0rem 0px 6.6rem;
+       background-color: #fafafa;
+       min-height: 100vh;
+    }
+    body{
+        display:flex;
+        justify-content: center;
+       background:grey;
+    }
+    html{
+        font-size:calc(0.5vw + 10px);
+    }
 }

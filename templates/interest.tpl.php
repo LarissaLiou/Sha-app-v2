@@ -9,6 +9,7 @@
     </head>
 
     <body>
+        <div class="container">
         <section>
             <h1>Tell us more about yourself!</h1>
             <p>If you were to solve a problem, what would the problem be about?</p>
@@ -93,4 +94,5 @@
             <button onclick = "removeAll()" type = "submit">I don't really know yet...</button>
             <br>
         </form>
+        </div>
     </body>

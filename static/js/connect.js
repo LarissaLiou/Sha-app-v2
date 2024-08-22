@@ -1,4 +1,4 @@
-const containers = document.querySelectorAll('.container');
+const containers = document.querySelectorAll('.connect-container');
 let initialX = null, currentX = null;
 var profileData = null
 var currentProfile = null

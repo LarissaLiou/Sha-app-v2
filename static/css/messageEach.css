@@ -23,7 +23,7 @@ h3{
 .message_nav .profile{
     border-radius: 50%;
     height:100%;
-    border: 2px solid #5BC0BE;
+    border: 2px solid #FBBF3B;
 }
 
 .message_nav .back{
@@ -43,7 +43,7 @@ h3{
 }
 
 .me .message {
-    background-color: #5BC0BE;
+    background-color: #FBBF3B;
     color:black;
 }
 .conversation{
@@ -91,7 +91,7 @@ h3{
 }
 
 .send{
-    background: #5BC0BE;
+    background: #FBBF3B;
     position:absolute;
     right:1.5em;
     height:2em;

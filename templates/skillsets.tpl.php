@@ -9,6 +9,7 @@
     </head>
 
     <body>
+        <div class = "container">
         <section>
             <h1>That's great!</h1>
             <p>Moving on, what are some of your skill sets?</p>
@@ -67,4 +68,6 @@
             <button type = "submit">That's all!</button>
             <button onclick = "removeAll()" type = "submit">I don't really know yet...</button>
             <br>
+            
         </form>
+        </div>

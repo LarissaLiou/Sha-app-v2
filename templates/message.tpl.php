@@ -9,6 +9,9 @@
     </head>
 
     <body>
+        <div class="container">
+
+        
         <section>
             <div id = "header">
                 <a href = "index.php?filename=home" id = "goBack"><span class = "mediumSize">🡰</span></a>&nbsp;&nbsp;&nbsp;
@@ -42,7 +45,7 @@
         <section id = "requestContent">
         </section>
 
-
+        </div>
         <script src = "static/js/message.js"></script>
     </body>
 </html>

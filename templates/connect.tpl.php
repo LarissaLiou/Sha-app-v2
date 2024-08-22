@@ -10,9 +10,9 @@
 
 </head>
 <body>
-    <h1>Connect</h1>
-    <div class = "gallery">
-        <div class="container before fadeFromLeft">
+   
+        <h1>Connect</h1>
+        <div class="connect-container before fadeFromLeft">
             <figure class="profile-img-wrapper">
                 <img class="profile-img" src="https://placehold.co/400x400" alt="Profile Picture">
             </figure>
@@ -22,7 +22,7 @@
             </section>
             <section class = "interests-section">
                 <h3>Interests</h3>
-                <div class="interest-container">
+                <div class="interest-connect-container">
                     <div class="interest interest-blue">Sustainability</div>
                     <div class="interest interest-red">Technology</div>
                 </div>
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div class="container current">
+        <div class="connect-container current">
             <figure class="profile-img-wrapper">
                 <img class="profile-img" src="https://placehold.co/400x400" alt="Profile Picture">
             </figure>
@@ -47,7 +47,7 @@
             </section>
             <section class = "interests-section">
                 <h3>Interests</h3>
-                <div class="interest-container">
+                <div class="interest-connect-container">
                     <div class="interest interest-blue">Sustainability</div>
                     <div class="interest interest-red">Technology</div>
                 </div>
@@ -62,7 +62,7 @@
             </div>
         </div>
         
-        <div class="container after fadeFromRight">
+        <div class="connect-container after fadeFromRight">
             <figure class="profile-img-wrapper">
                 <img class="profile-img" src="https://placehold.co/400x400" alt="Profile Picture">
             </figure>
@@ -72,7 +72,7 @@
             </section>
             <section class = "interests-section">
                 <h3>Interests</h3>
-                <div class="interest-container">
+                <div class="interest-connect-container">
                     <div class="interest interest-blue">Sustainability</div>
                     <div class="interest interest-red">Technology</div>
                 </div>
@@ -86,7 +86,6 @@
                 <button class="connect button">Connect</button>
             </div>
         </div>
-    </div>
     <script src = "static/js/connect.js" defer>  </script>
 </body>
 </html>
