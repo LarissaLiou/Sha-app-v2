@@ -14,7 +14,7 @@
             <h1>Sociate</h1>
         </header>
         <section>
-            <h2>Lorem ipsum dolor sit amet, consectetur</h2>
+            <h2>We don't just socialise, we realise</h2>
         </section>
         <main>
             <form class = "login_form" action="backend/Login/signup-end-point.php" method="post">

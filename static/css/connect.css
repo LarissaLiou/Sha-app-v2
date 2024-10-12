@@ -45,8 +45,7 @@ h3{
     margin-top:calc((1 - var(--currentness)) * 5vh); 
     transform: translateX(calc(var(--shift) + var(--offset)));
     position:fixed;
-    top:9%;
-    bottom: 10vh;
+    bottom: 12vh;
     display:flex;
     row-gap: 0.75em;
     background: #541166;
