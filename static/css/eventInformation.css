@@ -41,7 +41,7 @@ button:hover{
     height: 30vh;
     border-radius: 1rem;
     margin: auto;
-    object-fit: cover;
+    object-fit:cover;
 }
 
 .flex{

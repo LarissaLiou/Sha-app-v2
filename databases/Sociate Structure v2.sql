@@ -93,7 +93,7 @@ CREATE TABLE `users` (
   `username` TEXT NOT NULL UNIQUE,
   `email` TEXT NOT NULL UNIQUE,
   `password` TEXT NOT NULL COMMENT 'HASHED',
-  `created_at` DATETIME NOT NULL DEFAULT (CURRENT_TIMESTAMP),
+  `created_at` DATETIME NOT NULL DEFAULT (CURRENT_TIMESTAMP)
 );
 
 CREATE TABLE `users_skillset_junction` (

@@ -63,7 +63,7 @@
 
     <section id="aboutme" class="box">
         <div class="bold titles">About Me</div>
-        <textarea id="about_input" disabled placeholder="Tell us about yourself..."></textarea>
+        <textarea id="about_input" disabled placeholder="Tell us about yourself..." style = "resize:none;"></textarea>
         <button id="edit_about" class="hidden default_button" onclick="editAbout(this)"
             contenteditable="false">Edit</button>
     </section>
