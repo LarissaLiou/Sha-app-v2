@@ -2,6 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/ylrdxapi/sociate.biz
+    - /bin/mkdir -p $DEPLOYPATH/uploads/profiles
     - /bin/cp index.php $DEPLOYPATH
     - /bin/cp -R vendor $DEPLOYPATH
     - /bin/cp -R templates $DEPLOYPATH
