@@ -96,6 +96,11 @@ async function editAbout(ele){
 
 async function uploadPFP(ele){
     const file = document.getElementById("pfp-upload").files[0]
+    // Check file size < 5mb
+    if (file.size > 5*1024*1024){
+        alert("File size is too large! Please upload a file less than 5mb.")
+        return
+    }
     const formData = new FormData()
     formData.append("pfp",file)
     const response = await postRequest("backend/Profile/upload_pfp.php",formData)

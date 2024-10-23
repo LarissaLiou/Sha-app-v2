@@ -6,7 +6,7 @@ function uploadImageFile($fileInputName, $targetDir, $baseDir, $mysqli)
 {
     // Check if the file exists in $_FILES
     if (!isset($_FILES[$fileInputName]) || $_FILES[$fileInputName]['error'] != UPLOAD_ERR_OK) {
-        onError($mysqli, "No File Uploaded");
+        onError($mysqli, "Error Uploading File!");
         return null;
     }
 

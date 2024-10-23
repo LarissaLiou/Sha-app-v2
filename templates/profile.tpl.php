@@ -76,7 +76,7 @@
         </section>
     </div>
     
-    <div class = "popup">
+    <div class = "popup hidden">
         <h3 style = "text-align: center;">Upload Profile Picture</h3>
         <img src="static/assets/pfpicon.jpg" id = "pfp2">
         <div style = "display:flex; flex-direction: column; gap: 1em; align-items:center">
@@ -86,7 +86,7 @@
             </label>
         </div>
     </div>
-    <div class = "popup_background" onclick = "closePopup()">
+    <div class = "popup_background hidden" onclick = "closePopup()">
 
     </div>
 </body>
