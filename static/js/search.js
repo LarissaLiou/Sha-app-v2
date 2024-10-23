@@ -9,7 +9,7 @@ function insertEvent(eventData){
     event.classList.add("event")
     const img = document.createElement("img")
     img.classList.add("event_picture")
-    img.src = eventData.image
+    img.src = eventData.event_image
     img.onerror = function(){
         img.src = "static/assets/default.png"
     }

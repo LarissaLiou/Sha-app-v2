@@ -1,6 +1,7 @@
 <?php
 require_once '../Defaults/validate.inc.php';
 require_once '../Defaults/connect.inc.php';
+require_once '../Defaults/utils.inc.php';
 
 $sqlUsers = "SELECT `users`.`user_id`,`user_handle`,`username`,`profile_picture` FROM `users`
             LEFT JOIN `user_details` ON `users`.`user_id` = `user_details`.`user_id`";
@@ -40,4 +41,4 @@ foreach ($eventData as $row) {
         ];
     }
 }
-echo json_encode(['users' => $userData, 'events' => $events]);
+echo json_encode(utf8ize(['users' => $userData, 'events' => $events]));

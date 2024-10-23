@@ -37,6 +37,7 @@ function fillProfile(profileData){
     const country = document.getElementById("personCountry")
     const state = document.getElementById("personState")
     const profileEle = document.getElementById("pfp")
+    const profile2Ele = document.getElementById("pfp2")
     const aboutInput = document.getElementById("about_input")
     connectionCountEle.textContent = profileData.connection_count??0
     name.textContent = profileData.username
@@ -48,6 +49,12 @@ function fillProfile(profileData){
     profileEle.src = profileData.profile_picture
     profileEle.onerror = function(){
         this.src = "static/assets/default.png"
+    }
+    if (profileData){
+        profile2Ele.src = profileData.profile_picture
+        profile2Ele.onerror = function(){
+            this.src = "static/assets/default.png"
+        }
     }
 
 }
@@ -62,6 +69,9 @@ function handleIfSelf(){
     aboutInput.disabled = false
     const saveButton = document.getElementById("edit_about")
     saveButton.style.display = "block"
+    const pfp = document.getElementById("pfp")
+    pfp.classList.add("pfp_enabled")
+    pfp.onclick = openPopup
     
 }
 async function setUp(){
@@ -82,5 +92,37 @@ async function editAbout(ele){
     else{
         alert(response.error)
     }
+}
+
+async function uploadPFP(ele){
+    const file = document.getElementById("pfp-upload").files[0]
+    const formData = new FormData()
+    formData.append("pfp",file)
+    const response = await postRequest("backend/Profile/upload_pfp.php",formData)
+    if (response.success){
+        alert("Profile Picture Updated!")
+        const profileEle = document.getElementById("pfp")
+        const profile2Ele = document.getElementById("pfp2")
+        profileEle.src = response.filename
+        profile2Ele.src = response.filename
+    }
+    else{
+        alert(response.error)
+    }
+}
+
+function closePopup(){
+    const popup = document.querySelector(".popup")
+    const popup_background = document.querySelector(".popup_background")
+    popup.classList.add("hidden")
+    popup_background.classList.add("hidden")
+
+
+}
+function openPopup(){
+    const popup = document.querySelector(".popup")
+    const popup_background = document.querySelector(".popup_background")
+    popup.classList.remove("hidden")
+    popup_background.classList.remove("hidden")
 }
 setUp()
