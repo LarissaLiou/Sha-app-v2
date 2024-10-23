@@ -13,7 +13,7 @@
         <h1>Find</h1>
         <div id = "searchbar">
             <input type = "text" id = "search" placeholder = "Search Sociate">
-            <img id = "searchicon" src = "static/assets/searchicon.svg">
+            <img id = "searchicon" src = "static/assets/searchIcon.svg">
         </div>
         <section id = "recent">
             <!-- <h2>Recent</h2>

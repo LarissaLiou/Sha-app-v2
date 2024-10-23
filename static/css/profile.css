@@ -232,6 +232,7 @@ h1{
     border: 2px solid white;
     outline: 2px solid #FBBF3B;
     border-radius: 100%;
+    aspect-ratio: 1/1;
 }
 
 /* round will apply max border radius, aiming to achieve a round shape, it also follows a fixed dimension of 20vw height */
@@ -282,4 +283,54 @@ section{
     background-color: transparent;
     font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background:#9b9befa0;
+    padding:3em 1em;
+    display:flex;
+    flex-direction:column;
+    gap:2em;
+    backdrop-filter: blur(5px);
+    align-items: center;
+    z-index: 2;
+}
+
+#pfp-upload {
+    display: none;
+  }
+  
+  .custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+
+#pfp2{
+    width:30vw;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+}
+
+.popup_background{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:#000000a0;
+    z-index: 1;
+}
+
+.pfp_enabled{
+    transition: filter 0.3s;
+}
+.pfp_enabled:hover{
+    cursor: pointer;
+    filter: brightness(0.8);
 }
