@@ -62,7 +62,7 @@ if (!verify_login($mysqli)){
 }
 
 $targetDir = __dir__."/../../uploads/profiles";
-$baseDir = "/uploads/profiles";
+$baseDir = "/Sha-app-v2/uploads/profiles";
 $filename = uploadImageFile("pfp", $targetDir,$baseDir, $mysqli);
 updateDatabase($filename, $_SESSION['userid'], $mysqli);
 onSuccess($mysqli, "Profile Picture Uploaded", ["filename" => $filename]);
