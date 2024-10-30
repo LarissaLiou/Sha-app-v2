@@ -48,7 +48,7 @@
                     <div class = "category">Pitching</div>
                     <div class = "category">Operations</div>
                     <div class = "category">Writing</div>
-                    <div class = "category">Investment pitchign</div>
+                    <div class = "category">Investment pitching</div>
                     <div class = "category">Liasons</div>
                 </div>
             </div>
