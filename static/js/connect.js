@@ -4,7 +4,7 @@ var profileData = null
 var currentProfile = null
 
 function setUpInterests(container,interests){
-  const interestContainer = container.querySelector(".interest-container")
+  const interestContainer = container.querySelector(".interests-section")
   interestContainer.innerHTML = ""
   for (var interest of interests){
     const interestElement = createEle("div",["interest"],null,{"textContent":interest['interest']},{"backgroundColor":interest['color']})
