@@ -36,4 +36,4 @@ foreach ($result['data'] as $row){
 }
 
 
-onSuccess($mysqli, true, ['event' => $response]);
+onSuccess($mysqli, true, utf8ize(['event' => $response]));

@@ -1,6 +1,5 @@
 <?php
-define("PASSWORD_SALT","3Y_J2ACWccfmI8ve?(q_fkLl");
-
+require_once __DIR__."/../../../private/sociate_passwords.inc.php";
 function verifyLoginCredentials($conn,$username,$password){
     $sql = 'SELECT `password`,`user_id` FROM `users` WHERE `username` = ? OR `email` = ?';
     $result = executeSelect($conn,$sql,"ss",[$username,$username]);

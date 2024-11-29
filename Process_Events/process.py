@@ -19,6 +19,11 @@ try:
     if connection.is_connected():
         print("Connected to the database")
 
+    # You can now perform database operations here
+    # For example, to create a cursor and execute a query:
+    
+    
+    print("You're connected to the database:", record)
     
 
 except mysql.connector.Error as err:
